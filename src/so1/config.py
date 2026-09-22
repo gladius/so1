@@ -69,6 +69,12 @@ class Limits:
     max_prompt_tokens: int = 32768
     max_concurrent_requests: int = 16
     max_upstream_concurrency: int = 64
+    batch_questions: bool = True
+    """Answer every question of a request in one upstream call when the upstream allows it.
+
+    Worth turning off when the service is co-located with the GPU: batching trades scheduler
+    parallelism for fewer round trips, which only pays when the network is the bottleneck.
+    """
     request_timeout_s: float = 120.0
     upstream_timeout_s: float = 90.0
 

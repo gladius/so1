@@ -38,5 +38,6 @@ limits:
   max_prompt_tokens: 32768    # clamped down to the upstream's max_model_len at startup
   max_concurrent_requests: 16
   max_upstream_concurrency: 64
+  batch_questions: true       # one upstream call per request; see results/EXPERIMENTS.md 14
   request_timeout_s: 120.0
   upstream_timeout_s: 90.0

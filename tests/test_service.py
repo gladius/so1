@@ -101,12 +101,32 @@ def test_temperature_calibration_is_applied(config, fake):
 # ------------------------------------------------------------------ execution
 
 
-def test_a_multi_question_request_warms_the_prefix_once(client, fake):
+def test_a_batchable_upstream_answers_every_question_in_one_call(client, fake):
+    """The whole point: K questions cost one round trip, and no warm-up is needed."""
     ask(client, {"a": NOUL, "b": CHOICE, "c": SCORE})
-    warmups = [b for b in completions(fake) if (b.get("top_logprobs") or b.get("logprobs")) == 1]
-    assert len(warmups) == 1
-    assert len(branches(fake)) == 3
-    assert "QUESTION:" not in warmups[0]["messages"][-1]["content"]
+    calls = completions(fake)
+    assert len(calls) == 1
+    assert len(calls[0]["prompt"]) == 3  # three independent prompts in one request
+    assert calls[0]["max_tokens"] == 1
+
+
+def test_batching_falls_back_to_one_call_per_question_without_detokenize(config, fake):
+    """An upstream that cannot round-trip its template keeps the per-question path."""
+    fake.supports_batch = False
+    with running(config, fake) as test_client:
+        assert test_client.get("/health").json()["upstreams"]["gemma4-e4b"]["detail"].count("per-question")
+        ask(test_client, {"a": NOUL, "b": CHOICE, "c": SCORE})
+        warmups = [b for b in completions(fake) if (b.get("top_logprobs") or b.get("logprobs")) == 1]
+        assert len(warmups) == 1  # prefix warmed once
+        assert len(branches(fake)) == 3  # then one call per question
+
+
+def test_chat_message_state_uses_the_per_question_path(client, fake):
+    """Chat turns cannot be spliced into a pre-rendered template, so they fall back."""
+    ask(client, {"a": NOUL, "b": NOUL},
+        state=[{"role": "user", "content": "hi"}, {"role": "assistant", "content": "hello"}])
+    assert all(isinstance(b.get("prompt"), (str, type(None))) or "messages" in b for b in completions(fake))
+    assert len(branches(fake)) == 2
 
 
 def test_a_single_question_request_skips_the_warm_up(client, fake):

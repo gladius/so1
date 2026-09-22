@@ -180,30 +180,49 @@ class Service:
         await self._check_budget(upstream, branches)
         prepared = time.perf_counter()
 
-        prefix_tokens = 0
-        if len(branches) > 1:
-            try:
-                prefix_tokens = await self._guarded(upstream.warm(prompts.prefix_messages(request.state)))
-            except UpstreamError as exc:
-                log.warning("prefix warm-up failed (%s); continuing", exc.message[:150])
-        warmed = time.perf_counter()
+        # One batched call when the upstream can render prompts locally, otherwise one call per
+        # question. Batching removes the warm-up and K-1 round trips, which dominate when the
+        # GPU is remote; see results/EXPERIMENTS.md experiment 14.
+        contents = {
+            name: prompts.user_content(request.state, question, labels[name])
+            for name, question in request.questions.items()
+        }
+        batchable = (
+            self.config.limits.batch_questions
+            and upstream.can_batch
+            and all(value is not None for value in contents.values())
+        )
 
+        prefix_tokens = 0
         results: dict[str, Branch] = {}
-        try:
-            async with asyncio.TaskGroup() as group:
-                tasks = {
-                    name: group.create_task(self._guarded(upstream.score(messages, labels[name])))
-                    for name, messages in branches
-                }
-        except* UpstreamError as group_error:
-            first = group_error.exceptions[0]
-            assert isinstance(first, UpstreamError)
-            status = self._map_status(first.status)
-            raise ServiceError(
-                status,
-                {"error_type": _UPSTREAM_ERROR_TYPES[status], "message": f"Upstream error: {first.message[:200]}"},
-            ) from first
-        results = {name: task.result() for name, task in tasks.items()}
+        if batchable:
+            warmed = time.perf_counter()
+            names = list(request.questions)
+            try:
+                scored = await self._guarded(
+                    upstream.score_batch([contents[n] for n in names], [labels[n] for n in names])
+                )
+            except UpstreamError as exc:
+                raise self._upstream_error(exc) from exc
+            results = dict(zip(names, scored, strict=True))
+        else:
+            if len(branches) > 1:
+                try:
+                    prefix_tokens = await self._guarded(upstream.warm(prompts.prefix_messages(request.state)))
+                except UpstreamError as exc:
+                    log.warning("prefix warm-up failed (%s); continuing", exc.message[:150])
+            warmed = time.perf_counter()
+            try:
+                async with asyncio.TaskGroup() as group:
+                    tasks = {
+                        name: group.create_task(self._guarded(upstream.score(messages, labels[name])))
+                        for name, messages in branches
+                    }
+            except* UpstreamError as group_error:
+                first = group_error.exceptions[0]
+                assert isinstance(first, UpstreamError)
+                raise self._upstream_error(first) from first
+            results = {name: task.result() for name, task in tasks.items()}
         finished = time.perf_counter()
 
         answers: dict[str, Answer] = {}
@@ -240,6 +259,13 @@ class Service:
     async def _guarded(self, coro: Any) -> Any:
         async with self._branch_gate:
             return await coro
+
+    def _upstream_error(self, error: UpstreamError) -> ServiceError:
+        status = self._map_status(error.status)
+        return ServiceError(
+            status,
+            {"error_type": _UPSTREAM_ERROR_TYPES[status], "message": f"Upstream error: {error.message[:200]}"},
+        )
 
     @staticmethod
     def _map_status(status: int) -> int:

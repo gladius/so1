@@ -32,6 +32,9 @@ _MAX_LOGPROBS_RE = re.compile(r"greater than max allowed:\s*(\d+)")
 # reporting logprobs, only these come back; if it reports raw logprobs, the real answer leaks in.
 _IMPROBABLE = ("Kumquat", "Xylophone", "Zamboni")
 
+# Sentinels chosen to survive a tokenize/detokenize round trip and never occur in real text.
+_USER_SENTINEL = "\u0001USER_CONTENT\u0001"
+
 _PROBE_STATE = "Weather note: it is a clear, sunny day with no clouds."
 _PROBE_QUESTION = "QUESTION: Is the sky blue?\n\nReply with only Yes or No."
 
@@ -72,6 +75,9 @@ class Upstream:
     thought_ids: list[int] = field(default_factory=list)
     ready: bool = False
     tokenizer_ok: bool = True
+    render_head: str = ""
+    render_tail: str = ""
+    can_batch: bool = False
     detail: str = "not probed"
 
     # ---------------------------------------------------------------- HTTP
@@ -126,6 +132,7 @@ class Upstream:
             await self._probe_labels()
             await self._probe_strategy()
             await self._probe_exact_mode()
+            await self._probe_template()
         except UpstreamError as exc:
             self.ready = False
             self.detail = f"probe failed: {exc.message[:200]}"
@@ -133,7 +140,8 @@ class Upstream:
             return
         self.ready = True
         self.detail = (
-            f"{self.mode} readout, {self.strategy} strategy, {len(self.labels)} labels"
+            f"{self.mode} readout, {self.strategy} strategy, "
+            f"{'batched' if self.can_batch else 'per-question'}, {len(self.labels)} labels"
             f"{'' if self.tokenizer_ok else ' (assumed, no /tokenize)'}, "
             f"max_model_len={self.max_model_len}, max_logprobs={self.max_logprobs}"
         )
@@ -271,6 +279,83 @@ class Upstream:
             log.warning("%s: allowed-token mass %.3f < 1; using fallback readout", self.config.name, total)
             return
         self.mode = "exact"
+
+    async def detokenize(self, tokens: list[int]) -> str:
+        payload = await self._request(
+            "POST", "/detokenize", {"model": self.served_model, "tokens": tokens}, base=self.config.tokenize_url
+        )
+        return payload["prompt"] if isinstance(payload, dict) else str(payload)
+
+    async def _probe_template(self) -> None:
+        """Learn the chat template once so K prompts can be built locally and sent as one batch.
+
+        Renders a sentinel user message through the model's own template, then splits the
+        detokenised text around it. Verified byte-identical to the messages path before use;
+        anything unexpected leaves can_batch False and the per-question path in charge.
+        """
+        if not self.tokenizer_ok or self.strategy != "chat":
+            return
+        try:
+            ids = await self.tokenize(
+                messages=[{"role": "system", "content": SYSTEM}, {"role": "user", "content": _USER_SENTINEL}],
+                add_generation_prompt=True,
+                chat_template_kwargs={"enable_thinking": False},
+            )
+            rendered = await self.detokenize(ids)
+            if rendered.count(_USER_SENTINEL) != 1:
+                raise UpstreamError(500, "sentinel did not survive the template round trip")
+            head, tail = rendered.split(_USER_SENTINEL, 1)
+            # Prove the splice tokenises identically to the real messages path before trusting it.
+            probe_body = f"STATE:\n{_PROBE_STATE}\n\n{_PROBE_QUESTION}"
+            spliced = await self.tokenize(prompt=head + probe_body + tail, add_special_tokens=False)
+            expected = await self.tokenize(
+                messages=[{"role": "system", "content": SYSTEM}, {"role": "user", "content": probe_body}],
+                add_generation_prompt=True,
+                chat_template_kwargs={"enable_thinking": False},
+            )
+            if spliced != expected:
+                raise UpstreamError(500, "spliced prompt does not match the messages path")
+        except UpstreamError as exc:
+            log.info("%s: batching unavailable (%s); using one request per question",
+                     self.config.name, exc.message[:120])
+            return
+        self.render_head, self.render_tail, self.can_batch = head, tail, True
+
+    async def score_batch(self, contents: list[str], labels: list[list[str]]) -> list[Branch]:
+        """Score every question of a request in ONE upstream call.
+
+        vLLM's /v1/completions takes a list of prompts and answers them as independent
+        sequences, sharing the identical prefix via its prefix cache. One round trip for the
+        whole request rather than one per question, which dominates when the GPU is remote.
+        """
+        started = time.perf_counter()
+        prompts = [self.render_head + content + self.render_tail for content in contents]
+        body: dict[str, Any] = {
+            "model": self.served_model, "prompt": prompts, "max_tokens": 1,
+            "temperature": 0.0, "logprobs": self.max_logprobs,
+        }
+        if self.mode == "exact":
+            # One mask covers the whole batch, so allow every label any question might use;
+            # each answer is still normalised over its own labels.
+            allowed = sorted({self.label_ids[label] for group in labels for label in group})
+            if len(allowed) <= self.max_logprobs:
+                body |= {"temperature": 1.0, "top_p": 1.0, "top_k": -1, "min_p": 0.0,
+                         "allowed_token_ids": allowed, "logprobs": len(allowed)}
+        payload = await self._request("POST", "/v1/completions", body)
+        choices = sorted(payload["choices"], key=lambda c: c.get("index", 0))
+        if len(choices) != len(prompts):
+            raise UpstreamError(502, f"batch returned {len(choices)} answers for {len(prompts)} questions")
+        elapsed = (time.perf_counter() - started) * 1000
+        prompt_tokens = int(payload.get("usage", {}).get("prompt_tokens") or 0)
+        branches = []
+        for choice, group in zip(choices, labels, strict=True):
+            logprobs = choice["logprobs"]
+            top = list(logprobs["top_logprobs"][0].items())
+            probs, coverage = label_distribution(top, group)
+            branches.append(Branch(probs=probs, coverage=coverage,
+                                   prompt_tokens=prompt_tokens // len(prompts),
+                                   top_token=logprobs["tokens"][0], latency_ms=elapsed))
+        return branches
 
     async def _discover_max_logprobs(self) -> int:
         wanted = self.limits.max_choice_options

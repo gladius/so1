@@ -79,6 +79,17 @@ def question_block(question: Question, labels: list[str]) -> str:
     return "\n".join(lines)
 
 
+def user_content(state: Any, question: Question, labels: list[str]) -> str | None:
+    """The single user message for a plain/JSON state, or None when the state is chat turns.
+
+    Chat-message state needs the model's turn structure, so it cannot be spliced into a
+    pre-rendered template and falls back to the per-question path.
+    """
+    if as_chat_messages(state) is not None:
+        return None
+    return f"STATE:\n{render(state)}\n\n{question_block(question, labels)}"
+
+
 def prefix_messages(state: Any) -> list[dict[str, str]]:
     """The shared part of every branch: what the warm-up call sends."""
     chat = as_chat_messages(state)

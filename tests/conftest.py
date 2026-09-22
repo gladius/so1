@@ -40,7 +40,16 @@ _OPTION_LINE = re.compile(r"^([A-Z]{1,2})\. ", re.MULTILINE)
 class FakeVLLM:
     """Parses the prompt for its labels, then answers with a distribution the test picks."""
 
+    # A deterministic, fully reversible toy tokenizer, so /tokenize and /detokenize round-trip
+    # and a locally spliced prompt encodes identically to the messages path - exactly the
+    # property the real template probe verifies before enabling batching.
+    TEMPLATE_HEAD = "<s>system\n{system}\n<user>\n"
+    TEMPLATE_TAIL = "\n<end>\n<model>\n"
+
     def __init__(self) -> None:
+        self._vocab: dict[str, int] = {}
+        self._inverse: dict[int, str] = {}
+        self.supports_batch = True
         self.model = "gemma4-e4b"
         self.max_model_len = 8192
         self.max_logprobs = 20
@@ -71,7 +80,28 @@ class FakeVLLM:
 
     @staticmethod
     def _text_of(body: dict[str, Any]) -> str:
-        return "\n".join(m["content"] for m in body.get("messages", []))
+        if body.get("messages"):
+            return "\n".join(m["content"] for m in body["messages"])
+        prompt = body.get("prompt")
+        return prompt if isinstance(prompt, str) else ""
+
+    def render(self, messages: list[dict[str, str]]) -> str:
+        system = next((m["content"] for m in messages if m["role"] == "system"), "")
+        rest = "\n".join(m["content"] for m in messages if m["role"] != "system")
+        return self.TEMPLATE_HEAD.format(system=system) + rest + self.TEMPLATE_TAIL
+
+    def encode(self, text: str) -> list[int]:
+        ids = []
+        for index in range(0, len(text), 4):
+            chunk = text[index : index + 4]
+            if chunk not in self._vocab:
+                token = 50_000 + len(self._vocab)
+                self._vocab[chunk], self._inverse[token] = token, chunk
+            ids.append(self._vocab[chunk])
+        return ids
+
+    def decode(self, tokens: list[int]) -> str:
+        return "".join(self._inverse.get(t, "") for t in tokens)
 
     # -------------------------------------------------------------- transport
 
@@ -92,6 +122,8 @@ class FakeVLLM:
             )
         if path == "/tokenize":
             return self._tokenize(body)
+        if path == "/detokenize":
+            return self._detokenize(body)
         if path in ("/v1/chat/completions", "/v1/completions"):
             return self._completion(path, body)
         return httpx.Response(404, json={"error": {"message": f"no route {path}"}})
@@ -100,14 +132,37 @@ class FakeVLLM:
         if "prompt" in body:
             prompt = body["prompt"]
             if isinstance(prompt, str):
-                tokens = [TOKEN_IDS[prompt]] if prompt in TOKEN_IDS else [7, 8, 9]
+                if prompt in TOKEN_IDS:
+                    tokens = [TOKEN_IDS[prompt]]
+                elif len(prompt) <= 3:
+                    tokens = [7, 8]  # a short string that is NOT a single token in this tokenizer
+                else:
+                    tokens = self.encode(prompt)
             else:
                 tokens = list(prompt)
         else:
-            tokens = list(range(max(1, len(self._text_of(body)) // 4)))
+            tokens = self.encode(self.render(body.get("messages", [])))
         return httpx.Response(200, json={"count": len(tokens), "tokens": tokens, "max_model_len": self.max_model_len})
 
+    def _detokenize(self, body: dict[str, Any]) -> httpx.Response:
+        if not self.supports_batch:
+            return httpx.Response(404, json={"error": {"message": "no route /detokenize"}})
+        return httpx.Response(200, json={"prompt": self.decode(body.get("tokens", []))})
+
     def _completion(self, path: str, body: dict[str, Any]) -> httpx.Response:
+        prompts = body.get("prompt")
+        if isinstance(prompts, list) and prompts and isinstance(prompts[0], str):
+            if not self.supports_batch:
+                return httpx.Response(400, json={"error": {"message": "batched prompts not supported"}})
+            requested = body.get("logprobs") or 1
+            choices = []
+            for index, text in enumerate(prompts):
+                top = self.distribution(self.labels_in(text))[:requested]
+                choices.append({"index": index,
+                                "logprobs": {"tokens": [top[0][0]], "top_logprobs": [dict(top)]}})
+            usage = {"prompt_tokens": sum(len(p) // 4 for p in prompts), "completion_tokens": len(prompts)}
+            return httpx.Response(200, json={"choices": choices, "usage": usage})
+
         requested = body.get("top_logprobs") if path.endswith("chat/completions") else body.get("logprobs")
         if requested and requested > self.max_logprobs:
             return httpx.Response(
