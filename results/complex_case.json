@@ -1,0 +1,228 @@
+{
+ "so1": {
+  "answers": {
+   "open_technical": {
+    "type": "noul",
+    "noul": 0.9997388096905393
+   },
+   "open_billing": {
+    "type": "noul",
+    "noul": 0.0024725720939328265
+   },
+   "cancel_threat": {
+    "type": "noul",
+    "noul": 0.9999822214547271
+   },
+   "wants_refund_now": {
+    "type": "noul",
+    "noul": 2.0816915227282607e-08
+   },
+   "mentions_security": {
+    "type": "noul",
+    "noul": 1.1365607351240258e-06
+   },
+   "refund_raw": {
+    "type": "noul",
+    "noul": 0.2689415896137572
+   },
+   "refund_derived": {
+    "type": "noul",
+    "noul": 0.0046095039671486945
+   },
+   "routing": {
+    "type": "choice",
+    "choice": "technical",
+    "confidence": 0.999994791887306,
+    "probabilities": {
+     "billing": 2.902309071920465e-06,
+     "technical": 0.9999960939154795,
+     "sales": 2.699567958561568e-07,
+     "general": 7.338186526448193e-07
+    }
+   },
+   "area": {
+    "type": "choice",
+    "choice": "reporting_exports",
+    "confidence": 0.999999793695592,
+    "probabilities": {
+     "reporting_exports": 0.9999998280796599,
+     "billing_system": 1.5381733841299012e-07,
+     "authentication": 6.348799781307492e-09,
+     "mobile_app": 8.677780422006981e-09,
+     "public_api": 2.998960666739128e-09,
+     "notifications": 7.746072728446494e-11
+    }
+   },
+   "next_action": {
+    "type": "choice",
+    "choice": "escalate_to_engineering",
+    "confidence": 0.9983284467605533,
+    "probabilities": {
+     "wait_for_customer": 6.952993980033584e-06,
+     "escalate_to_engineering": 0.9986627574084427,
+     "issue_refund": 1.0662761612810374e-06,
+     "close_ticket": 4.217204025687738e-06,
+     "transfer_to_sales": 0.0013250061173903183
+    }
+   },
+   "urgency": {
+    "type": "score",
+    "score": 3.0044783857927113,
+    "confidence": 0.966119203081234,
+    "legend": {
+     "0": "Very low: no action needed",
+     "1": "Low: can wait a week or more",
+     "2": "Medium: should be handled within a few days",
+     "3": "High: blocks important work, handle today",
+     "4": "Critical: outage, data loss or security risk, handle immediately"
+    },
+    "probabilities": {
+     "0": 4.052257581558964e-06,
+     "1": 0.00025070429908924705,
+     "2": 0.017575719883980705,
+     "3": 0.9596018525117331,
+     "4": 0.02256767104761535
+    }
+   },
+   "frustration": {
+    "type": "score",
+    "score": 1.8519524450612734,
+    "confidence": 0.77792866759191,
+    "legend": {
+     "0": "Calm and satisfied",
+     "1": "Mildly annoyed",
+     "2": "Angry"
+    },
+    "probabilities": {
+     "0": 1.9066944660758213e-07,
+     "1": 0.1480471735998334,
+     "2": 0.85195263573072
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 1302,
+   "output_tokens": 12
+  },
+  "ms": [
+   1056.3045000017155,
+   1089.1032209910918
+  ],
+  "server_timing": "prepare;dur=0.3, warmup;dur=438.2, branches;dur=648.5",
+  "correct": 10,
+  "total": 12
+ },
+ "jev-1.13.0": {
+  "answers": {
+   "open_technical": {
+    "type": "noul",
+    "noul": 0.98
+   },
+   "open_billing": {
+    "type": "noul",
+    "noul": 0.17
+   },
+   "cancel_threat": {
+    "type": "noul",
+    "noul": 0.95
+   },
+   "wants_refund_now": {
+    "type": "noul",
+    "noul": 0.04
+   },
+   "mentions_security": {
+    "type": "noul",
+    "noul": 0.02
+   },
+   "refund_raw": {
+    "type": "noul",
+    "noul": 0.82
+   },
+   "refund_derived": {
+    "type": "noul",
+    "noul": 0.9
+   },
+   "routing": {
+    "type": "choice",
+    "choice": "technical",
+    "confidence": 1.0,
+    "probabilities": {
+     "technical": 1.0,
+     "billing": 0.0,
+     "sales": 0.0,
+     "general": 0.0
+    }
+   },
+   "area": {
+    "type": "choice",
+    "choice": "reporting_exports",
+    "confidence": 1.0,
+    "probabilities": {
+     "authentication": 0.0,
+     "notifications": 0.0,
+     "reporting_exports": 1.0,
+     "mobile_app": 0.0,
+     "billing_system": 0.0,
+     "public_api": 0.0
+    }
+   },
+   "next_action": {
+    "type": "choice",
+    "choice": "escalate_to_engineering",
+    "confidence": 0.95,
+    "probabilities": {
+     "issue_refund": 0.0,
+     "wait_for_customer": 0.01,
+     "close_ticket": 0.01,
+     "transfer_to_sales": 0.02,
+     "escalate_to_engineering": 0.96
+    }
+   },
+   "urgency": {
+    "type": "score",
+    "score": 3.23,
+    "confidence": 0.81,
+    "legend": {
+     "0": "Very low: no action needed",
+     "1": "Low: can wait a week or more",
+     "2": "Medium: should be handled within a few days",
+     "3": "High: blocks important work, handle today",
+     "4": "Critical: outage, data loss or security risk, handle immediately"
+    },
+    "probabilities": {
+     "0": 0.0,
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.77,
+     "4": 0.23
+    }
+   },
+   "frustration": {
+    "type": "score",
+    "score": 1.38,
+    "confidence": 0.4,
+    "legend": {
+     "0": "Calm and satisfied",
+     "1": "Mildly annoyed",
+     "2": "Angry"
+    },
+    "probabilities": {
+     "0": 0.01,
+     "1": 0.6,
+     "2": 0.39
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 1552,
+   "output_tokens": 337
+  },
+  "ms": [
+   386.5956279914826,
+   372.16043699299917
+  ],
+  "server_timing": null,
+  "correct": 12,
+  "total": 12
+ }
+}

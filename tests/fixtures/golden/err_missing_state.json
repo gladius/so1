@@ -1,0 +1,36 @@
+{
+  "source": "https://api.typesafe.ai",
+  "direct": true,
+  "request": {
+    "model": "jev-latest",
+    "questions": {
+      "q": {
+        "type": "noul",
+        "instructions": "Is this urgent?"
+      }
+    }
+  },
+  "status": 422,
+  "response": {
+    "detail": [
+      {
+        "type": "missing",
+        "loc": [
+          "body",
+          "state"
+        ],
+        "msg": "Field required",
+        "input": {
+          "model": "jev-latest",
+          "questions": {
+            "q": {
+              "type": "noul",
+              "instructions": "Is this urgent?",
+              "criteria": null
+            }
+          }
+        }
+      }
+    ]
+  }
+}

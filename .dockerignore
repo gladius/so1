@@ -1,0 +1,11 @@
+# Start from "exclude everything", then re-admit exactly what the Dockerfile COPYs.
+# Keeps the build context tiny and makes it impossible to leak a local .env or
+# config.yaml into an image by accident.
+*
+
+!pyproject.toml
+!README.md
+!config.example.yaml
+!src/
+src/**/__pycache__/
+src/**/*.py[cod]

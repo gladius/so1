@@ -1,0 +1,323 @@
+{
+  "endpoint": "https://h2duge74u2oxgm.api.runpod.ai",
+  "model": "gemma4-e4b",
+  "rows": [
+    {
+      "q": "routing",
+      "type": "choice",
+      "tokens": 719,
+      "ms": 1018,
+      "pred": "billing",
+      "p_pred": 0.9999994720767834,
+      "coverage": 1.000000051218078,
+      "top_token": "A",
+      "probs": {
+        "billing": 0.9999994720767834,
+        "technical": 2.53601918025964e-07,
+        "sales": 4.363462029455563e-09,
+        "general": 2.699578365095799e-07
+      },
+      "expected": "billing",
+      "p_exp": 0.9999994720767834,
+      "correct": true,
+      "case": "buried_fact",
+      "variant": "500"
+    },
+    {
+      "q": "routing",
+      "type": "choice",
+      "tokens": 2317,
+      "ms": 817,
+      "pred": "billing",
+      "p_pred": 0.9999913722152621,
+      "coverage": 0.9999999260419269,
+      "top_token": "A",
+      "probs": {
+        "billing": 0.9999913722152621,
+        "technical": 1.653678249323762e-06,
+        "sales": 1.1861007912643979e-08,
+        "general": 6.962245480717878e-06
+      },
+      "expected": "billing",
+      "p_exp": 0.9999913722152621,
+      "correct": true,
+      "case": "buried_fact",
+      "variant": "2000"
+    },
+    {
+      "q": "routing",
+      "type": "choice",
+      "tokens": 2317,
+      "ms": 513,
+      "pred": "billing",
+      "p_pred": 0.9993714040397635,
+      "coverage": 0.9999999239781843,
+      "top_token": "D",
+      "probs": {
+        "general": 2.6978826336713927e-07,
+        "sales": 1.993480612852869e-06,
+        "technical": 0.0006263326913602014,
+        "billing": 0.9993714040397635
+      },
+      "expected": "billing",
+      "p_exp": 0.9993714040397635,
+      "correct": true,
+      "case": "buried_fact",
+      "variant": "2000-reversed"
+    },
+    {
+      "q": "routing",
+      "type": "choice",
+      "tokens": 4520,
+      "ms": 1023,
+      "pred": "billing",
+      "p_pred": 0.9998016647253345,
+      "coverage": 0.999999536706504,
+      "top_token": "A",
+      "probs": {
+        "billing": 0.9998016647253345,
+        "technical": 5.8283128302182095e-05,
+        "sales": 2.381898240896945e-07,
+        "general": 0.00013981395653921917
+      },
+      "expected": "billing",
+      "p_exp": 0.9998016647253345,
+      "correct": true,
+      "case": "buried_fact",
+      "variant": "4000"
+    },
+    {
+      "q": "routing",
+      "type": "choice",
+      "tokens": 7279,
+      "ms": 1290,
+      "pred": "billing",
+      "p_pred": 0.9995372658932568,
+      "coverage": 0.9999995972577089,
+      "top_token": "A",
+      "probs": {
+        "billing": 0.9995372658932568,
+        "technical": 3.118843880394778e-05,
+        "sales": 1.002550722560399e-06,
+        "general": 0.00043054311721671087
+      },
+      "expected": "billing",
+      "p_exp": 0.9995372658932568,
+      "correct": true,
+      "case": "buried_fact",
+      "variant": "6500"
+    },
+    {
+      "q": "routing",
+      "type": "choice",
+      "tokens": 2944,
+      "ms": 757,
+      "pred": "technical",
+      "p_pred": 0.999967552390751,
+      "coverage": 1.0000000237327955,
+      "top_token": "B",
+      "probs": {
+        "billing": 4.222714253417223e-06,
+        "technical": 0.999967552390751,
+        "sales": 6.893391522457291e-07,
+        "general": 2.753555584337353e-05
+      },
+      "expected": "technical",
+      "p_exp": 0.999967552390751,
+      "correct": true,
+      "case": "updated_fact_multi",
+      "variant": "2500"
+    },
+    {
+      "q": "billing_unresolved",
+      "type": "noul",
+      "tokens": 2871,
+      "ms": 511,
+      "pred": "no",
+      "p_pred": 0.9998601813402198,
+      "coverage": 0.9999964155758085,
+      "top_token": "No",
+      "probs": {
+        "yes": 0.00013981865978018044,
+        "no": 0.9998601813402198
+      },
+      "expected": "no",
+      "p_exp": 0.9998601813402198,
+      "correct": true,
+      "case": "updated_fact_multi",
+      "variant": "2500"
+    },
+    {
+      "q": "urgency",
+      "type": "score",
+      "tokens": 2942,
+      "ms": 511,
+      "pred": "4",
+      "p_pred": 0.9237521646026965,
+      "coverage": 0.9999993413237539,
+      "top_token": "D",
+      "probs": {
+        "1": 1.3481036377205498e-06,
+        "2": 6.914452588820256e-05,
+        "3": 0.0003511448765874388,
+        "4": 0.9237521646026965,
+        "5": 0.0758261978911901
+      },
+      "expected": ">=3.0",
+      "ev": 4.08,
+      "p_exp": null,
+      "correct": true,
+      "case": "updated_fact_multi",
+      "variant": "2500"
+    },
+    {
+      "q": "cancel_threat",
+      "type": "noul",
+      "tokens": 2869,
+      "ms": 512,
+      "pred": "no",
+      "p_pred": 0.9999967112555642,
+      "coverage": 0.9999999281229752,
+      "top_token": "No",
+      "probs": {
+        "yes": 3.28874443575988e-06,
+        "no": 0.9999967112555642
+      },
+      "expected": "no",
+      "p_exp": 0.9999967112555642,
+      "correct": true,
+      "case": "updated_fact_multi",
+      "variant": "2500"
+    },
+    {
+      "q": "eligible",
+      "type": "noul",
+      "tokens": 1762,
+      "ms": 607,
+      "pred": "no",
+      "p_pred": 0.9995121439152522,
+      "coverage": 0.9999722591399084,
+      "top_token": "No",
+      "probs": {
+        "yes": 0.00048785608474774555,
+        "no": 0.9995121439152522
+      },
+      "expected": "yes",
+      "p_exp": 0.00048785608474774555,
+      "correct": false,
+      "case": "rules",
+      "variant": "annual-3-exports"
+    },
+    {
+      "q": "eligible",
+      "type": "noul",
+      "tokens": 1762,
+      "ms": 410,
+      "pred": "no",
+      "p_pred": 0.9999969105048356,
+      "coverage": 0.999998089274662,
+      "top_token": "No",
+      "probs": {
+        "yes": 3.089495164321345e-06,
+        "no": 0.9999969105048356
+      },
+      "expected": "no",
+      "p_exp": 0.9999969105048356,
+      "correct": true,
+      "case": "rules",
+      "variant": "annual-7-exports"
+    },
+    {
+      "q": "eligible",
+      "type": "noul",
+      "tokens": 1755,
+      "ms": 430,
+      "pred": "no",
+      "p_pred": 0.9999957771719941,
+      "coverage": 0.9999969277052188,
+      "top_token": "No",
+      "probs": {
+        "yes": 4.222828005962274e-06,
+        "no": 0.9999957771719941
+      },
+      "expected": "no",
+      "p_exp": 0.9999957771719941,
+      "correct": true,
+      "case": "rules",
+      "variant": "nonprofit-monthly"
+    },
+    {
+      "q": "eligible",
+      "type": "noul",
+      "tokens": 1754,
+      "ms": 473,
+      "pred": "yes",
+      "p_pred": 0.9999771720030888,
+      "coverage": 0.9999999524118643,
+      "top_token": "Yes",
+      "probs": {
+        "yes": 0.9999771720030888,
+        "no": 2.282799691124296e-05
+      },
+      "expected": "yes",
+      "p_exp": 0.9999771720030888,
+      "correct": true,
+      "case": "rules",
+      "variant": "nonprofit-duplicate"
+    },
+    {
+      "q": "routing",
+      "type": "choice",
+      "tokens": 2378,
+      "ms": 769,
+      "pred": "technical",
+      "p_pred": 0.9989514574849813,
+      "coverage": 0.999999648075296,
+      "top_token": "B",
+      "probs": {
+        "billing": 0.00023031820854048173,
+        "technical": 0.9989514574849813,
+        "sales": 0.00010879461820175349,
+        "general": 0.0007094296882764915
+      },
+      "expected": "technical",
+      "p_exp": 0.9989514574849813,
+      "correct": true,
+      "case": "distractor",
+      "variant": "2000"
+    },
+    {
+      "q": "routing",
+      "type": "choice",
+      "tokens": 2378,
+      "ms": 443,
+      "pred": "technical",
+      "p_pred": 0.999965570793547,
+      "coverage": 1.0000000981131185,
+      "top_token": "C",
+      "probs": {
+        "general": 3.5007461363014453e-06,
+        "sales": 2.014540308397702e-05,
+        "technical": 0.999965570793547,
+        "billing": 1.078305723282041e-05
+      },
+      "expected": "technical",
+      "p_exp": 0.999965570793547,
+      "correct": true,
+      "case": "distractor",
+      "variant": "2000-reversed"
+    }
+  ],
+  "multi": [
+    {
+      "case": "updated_fact_multi",
+      "sequential_ms": [
+        757,
+        511,
+        511,
+        512
+      ],
+      "parallel_wall_ms": 1030
+    }
+  ]
+}

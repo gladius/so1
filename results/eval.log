@@ -1,0 +1,53 @@
+suite=all: 39 cases, 45 questions
+
+running so1 at http://127.0.0.1:8080 (jev-latest) ...
+running jev at https://api.typesafe.ai ...
+
+==============================================================================
+metric                         so1  jev-latest
+------------------------------------------------------------------------------
+accuracy               42/45 (93%) 43/45 (96%)
+  noul                 16/18 (89%) 17/18 (94%)
+  choice               16/17 (94%) 16/17 (94%)
+  score               10/10 (100%)10/10 (100%)
+latency p50 / request       371 ms      341 ms
+latency p90 / request       784 ms      384 ms
+latency / question          416 ms      299 ms
+ECE (lower better)           0.109       0.073
+Brier (lower better)         0.111       0.089
+failed requests                  0           0
+==============================================================================
+
+so1 misses (3):
+  rules/annual-3-exports/eligible           expected yes            got no           p=1.00
+  noul/10-ambiguous/actionable         expected unsure         got 0.00         p=1.00
+      genuinely underdetermined; should not be confident
+  choice/8-ambiguous/routing            expected unsure         got conf=1.00    p=1.00
+      no signal; a flat distribution is the correct answer
+
+jev-latest misses (2):
+  noul/10-ambiguous/actionable         expected unsure         got 0.10         p=0.90
+      genuinely underdetermined; should not be confident
+  choice/8-ambiguous/routing            expected unsure         got conf=0.97    p=0.98
+      no signal; a flat distribution is the correct answer
+
+agreement: 36/45 identical predictions
+  case/question                                  expected       so1            jev           
+  updated_fact_multi/2500/urgency                3.0            4.07           4.38           
+  rules/annual-3-exports/eligible                yes            no             yes            jev wins
+  noul/10-ambiguous/actionable                   unsure         0.00           0.10           
+  choice/8-ambiguous/routing                     unsure         conf=1.00      conf=0.97      
+  score/4-urgency5-low/urgency                   [1.0, 2.6]     2.35           2.33           
+  score/6-ten-levels/severity                    [0.0, 3.0]     2.00           1.30           
+  score/7-ten-levels-high/severity               7.0            7.29           7.98           
+  score/8-midpoint/anger                         [1.2, 2.2]     2.00           1.91           
+  mixed/fanout/urgency                           3.5            4.05           4.26           
+
+vs recorded direct-endpoint baseline (14/15):
+  regressed: choice/8-ambiguous/routing
+  regressed: noul/10-ambiguous/actionable
+  unchanged miss: rules/annual-3-exports/eligible
+
+full run -> eval_run.json
+
+wrote 33 labelled rows -> runs.jsonl

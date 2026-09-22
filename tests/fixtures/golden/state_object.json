@@ -1,0 +1,40 @@
+{
+  "source": "https://api.typesafe.ai",
+  "direct": true,
+  "request": {
+    "model": "jev-latest",
+    "state": {
+      "ticket": {
+        "subject": "Duplicate charge",
+        "body": "I was charged twice for order A-104."
+      },
+      "order": {
+        "id": "A-104",
+        "charges": [
+          49,
+          49
+        ]
+      }
+    },
+    "questions": {
+      "duplicate": {
+        "type": "noul",
+        "instructions": "Do the records show a duplicate charge?"
+      }
+    }
+  },
+  "status": 200,
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "duplicate": {
+        "type": "noul",
+        "noul": 0.97
+      }
+    },
+    "usage": {
+      "input_tokens": 337,
+      "output_tokens": 20
+    }
+  }
+}

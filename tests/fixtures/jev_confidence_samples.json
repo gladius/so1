@@ -1,0 +1,947 @@
+{
+ "note": "confidence values observed from the real Jev API (jev-1.13.0), used to pin our formulas. probabilities as returned, i.e. rounded to 2 decimals.",
+ "samples": [
+  {
+   "kind": "score",
+   "K": 2,
+   "probs": {
+    "0": 1,
+    "1": 0
+   },
+   "conf": 1,
+   "val": 0,
+   "choice": null
+  },
+  {
+   "kind": "score",
+   "K": 2,
+   "probs": {
+    "0": 0,
+    "1": 1
+   },
+   "conf": 1,
+   "val": 1,
+   "choice": null
+  },
+  {
+   "kind": "score",
+   "K": 2,
+   "probs": {
+    "0": 1,
+    "1": 0
+   },
+   "conf": 1,
+   "val": 0,
+   "choice": null
+  },
+  {
+   "kind": "score",
+   "K": 2,
+   "probs": {
+    "0": 1,
+    "1": 0
+   },
+   "conf": 1,
+   "val": 0,
+   "choice": null
+  },
+  {
+   "kind": "score",
+   "K": 2,
+   "probs": {
+    "0": 0.52,
+    "1": 0.48
+   },
+   "conf": 0.04,
+   "val": 0.48,
+   "choice": null
+  },
+  {
+   "kind": "score",
+   "K": 3,
+   "probs": {
+    "0": 0.96,
+    "1": 0.04,
+    "2": 0
+   },
+   "conf": 0.94,
+   "val": 0.04,
+   "choice": null
+  },
+  {
+   "kind": "score",
+   "K": 3,
+   "probs": {
+    "0": 0,
+    "1": 0,
+    "2": 1
+   },
+   "conf": 1,
+   "val": 2,
+   "choice": null
+  },
+  {
+   "kind": "score",
+   "K": 3,
+   "probs": {
+    "0": 1,
+    "1": 0,
+    "2": 0
+   },
+   "conf": 1,
+   "val": 0,
+   "choice": null
+  },
+  {
+   "kind": "score",
+   "K": 3,
+   "probs": {
+    "0": 0.98,
+    "1": 0.02,
+    "2": 0
+   },
+   "conf": 0.96,
+   "val": 0.02,
+   "choice": null
+  },
+  {
+   "kind": "score",
+   "K": 3,
+   "probs": {
+    "0": 0.02,
+    "1": 0.97,
+    "2": 0.01
+   },
+   "conf": 0.95,
+   "val": 0.99,
+   "choice": null
+  },
+  {
+   "kind": "score",
+   "K": 4,
+   "probs": {
+    "0": 0,
+    "1": 0.98,
+    "2": 0.02,
+    "3": 0
+   },
+   "conf": 0.98,
+   "val": 1.01,
+   "choice": null
+  },
+  {
+   "kind": "score",
+   "K": 4,
+   "probs": {
+    "0": 0,
+    "1": 0,
+    "2": 0,
+    "3": 1
+   },
+   "conf": 1,
+   "val": 3,
+   "choice": null
+  },
+  {
+   "kind": "score",
+   "K": 4,
+   "probs": {
+    "0": 1,
+    "1": 0,
+    "2": 0,
+    "3": 0
+   },
+   "conf": 1,
+   "val": 0,
+   "choice": null
+  },
+  {
+   "kind": "score",
+   "K": 4,
+   "probs": {
+    "0": 0.63,
+    "1": 0.37,
+    "2": 0,
+    "3": 0
+   },
+   "conf": 0.62,
+   "val": 0.38,
+   "choice": null
+  },
+  {
+   "kind": "score",
+   "K": 4,
+   "probs": {
+    "0": 0,
+    "1": 0.21,
+    "2": 0.79,
+    "3": 0
+   },
+   "conf": 0.79,
+   "val": 1.8,
+   "choice": null
+  },
+  {
+   "kind": "score",
+   "K": 5,
+   "probs": {
+    "0": 0.16,
+    "1": 0.77,
+    "2": 0.07,
+    "3": 0,
+    "4": 0
+   },
+   "conf": 0.8,
+   "val": 0.92,
+   "choice": null
+  },
+  {
+   "kind": "score",
+   "K": 5,
+   "probs": {
+    "0": 0,
+    "1": 0,
+    "2": 0,
+    "3": 0.03,
+    "4": 0.97
+   },
+   "conf": 0.97,
+   "val": 3.96,
+   "choice": null
+  },
+  {
+   "kind": "score",
+   "K": 5,
+   "probs": {
+    "0": 0.98,
+    "1": 0,
+    "2": 0.01,
+    "3": 0,
+    "4": 0.01
+   },
+   "conf": 0.96,
+   "val": 0.05,
+   "choice": null
+  },
+  {
+   "kind": "score",
+   "K": 5,
+   "probs": {
+    "0": 0.8,
+    "1": 0.1,
+    "2": 0.08,
+    "3": 0.02,
+    "4": 0
+   },
+   "conf": 0.72,
+   "val": 0.34,
+   "choice": null
+  },
+  {
+   "kind": "score",
+   "K": 5,
+   "probs": {
+    "0": 0,
+    "1": 0.42,
+    "2": 0.51,
+    "3": 0.07,
+    "4": 0
+   },
+   "conf": 0.59,
+   "val": 1.64,
+   "choice": null
+  },
+  {
+   "kind": "score",
+   "K": 6,
+   "probs": {
+    "0": 0.17,
+    "1": 0.47,
+    "2": 0.2,
+    "3": 0.12,
+    "4": 0.02,
+    "5": 0.02
+   },
+   "conf": 0.49,
+   "val": 1.42,
+   "choice": null
+  },
+  {
+   "kind": "score",
+   "K": 6,
+   "probs": {
+    "0": 0.01,
+    "1": 0.02,
+    "2": 0.02,
+    "3": 0.02,
+    "4": 0.07,
+    "5": 0.86
+   },
+   "conf": 0.82,
+   "val": 4.72,
+   "choice": null
+  },
+  {
+   "kind": "score",
+   "K": 6,
+   "probs": {
+    "0": 0.74,
+    "1": 0.01,
+    "2": 0.03,
+    "3": 0.03,
+    "4": 0.01,
+    "5": 0.18
+   },
+   "conf": 0.26,
+   "val": 1.11,
+   "choice": null
+  },
+  {
+   "kind": "score",
+   "K": 6,
+   "probs": {
+    "0": 0.62,
+    "1": 0.08,
+    "2": 0.08,
+    "3": 0.08,
+    "4": 0.04,
+    "5": 0.1
+   },
+   "conf": 0.24,
+   "val": 1.14,
+   "choice": null
+  },
+  {
+   "kind": "score",
+   "K": 6,
+   "probs": {
+    "0": 0.01,
+    "1": 0.19,
+    "2": 0.33999999999999997,
+    "3": 0.34,
+    "4": 0.1,
+    "5": 0.02
+   },
+   "conf": 0.47,
+   "val": 2.38,
+   "choice": null
+  },
+  {
+   "kind": "score",
+   "K": 7,
+   "probs": {
+    "0": 0.15,
+    "1": 0.48,
+    "2": 0.16,
+    "3": 0.14,
+    "4": 0.04,
+    "5": 0.02,
+    "6": 0.01
+   },
+   "conf": 0.5,
+   "val": 1.55,
+   "choice": null
+  },
+  {
+   "kind": "score",
+   "K": 7,
+   "probs": {
+    "0": 0.01,
+    "1": 0.01,
+    "2": 0.02,
+    "3": 0.02,
+    "4": 0.05,
+    "5": 0.05,
+    "6": 0.84
+   },
+   "conf": 0.76,
+   "val": 5.58,
+   "choice": null
+  },
+  {
+   "kind": "score",
+   "K": 7,
+   "probs": {
+    "0": 0.7,
+    "1": 0.01,
+    "2": 0.01,
+    "3": 0.03,
+    "4": 0.01,
+    "5": 0,
+    "6": 0.24
+   },
+   "conf": 0.06,
+   "val": 1.62,
+   "choice": null
+  },
+  {
+   "kind": "score",
+   "K": 7,
+   "probs": {
+    "0": 0.59,
+    "1": 0.09,
+    "2": 0.07,
+    "3": 0.07,
+    "4": 0.04,
+    "5": 0.02,
+    "6": 0.12
+   },
+   "conf": 0.16,
+   "val": 1.44,
+   "choice": null
+  },
+  {
+   "kind": "score",
+   "K": 7,
+   "probs": {
+    "0": 0.01,
+    "1": 0.2,
+    "2": 0.22,
+    "3": 0.28,
+    "4": 0.21,
+    "5": 0.06,
+    "6": 0.02
+   },
+   "conf": 0.4,
+   "val": 2.75,
+   "choice": null
+  },
+  {
+   "kind": "score",
+   "K": 8,
+   "probs": {
+    "0": 0.15,
+    "1": 0.45,
+    "2": 0.18,
+    "3": 0.12,
+    "4": 0.04,
+    "5": 0.03,
+    "6": 0.02,
+    "7": 0.01
+   },
+   "conf": 0.52,
+   "val": 1.66,
+   "choice": null
+  },
+  {
+   "kind": "score",
+   "K": 8,
+   "probs": {
+    "0": 0,
+    "1": 0.02,
+    "2": 0.02,
+    "3": 0.02,
+    "4": 0.05,
+    "5": 0.03,
+    "6": 0.04,
+    "7": 0.82
+   },
+   "conf": 0.74,
+   "val": 6.48,
+   "choice": null
+  },
+  {
+   "kind": "score",
+   "K": 8,
+   "probs": {
+    "0": 0.78,
+    "1": 0.01,
+    "2": 0.01,
+    "3": 0.02,
+    "4": 0.01,
+    "5": 0,
+    "6": 0.01,
+    "7": 0.16
+   },
+   "conf": 0.36,
+   "val": 1.27,
+   "choice": null
+  },
+  {
+   "kind": "score",
+   "K": 8,
+   "probs": {
+    "0": 0.53,
+    "1": 0.12,
+    "2": 0.09,
+    "3": 0.08,
+    "4": 0.04,
+    "5": 0.02,
+    "6": 0.03,
+    "7": 0.09
+   },
+   "conf": 0.22,
+   "val": 1.56,
+   "choice": null
+  },
+  {
+   "kind": "score",
+   "K": 8,
+   "probs": {
+    "0": 0.01,
+    "1": 0.14,
+    "2": 0.19,
+    "3": 0.22999999999999998,
+    "4": 0.19,
+    "5": 0.18,
+    "6": 0.05,
+    "7": 0.01
+   },
+   "conf": 0.39,
+   "val": 3.25,
+   "choice": null
+  },
+  {
+   "kind": "score",
+   "K": 10,
+   "probs": {
+    "0": 0.16,
+    "1": 0.37,
+    "2": 0.2,
+    "3": 0.13,
+    "4": 0.04,
+    "5": 0.04,
+    "6": 0.02,
+    "7": 0.02,
+    "8": 0.01,
+    "9": 0.01
+   },
+   "conf": 0.48,
+   "val": 1.97,
+   "choice": null
+  },
+  {
+   "kind": "score",
+   "K": 10,
+   "probs": {
+    "0": 0.01,
+    "1": 0.01,
+    "2": 0.01,
+    "3": 0.02,
+    "4": 0.04,
+    "5": 0.03,
+    "6": 0.03,
+    "7": 0.04,
+    "8": 0.09,
+    "9": 0.72
+   },
+   "conf": 0.65,
+   "val": 8.12,
+   "choice": null
+  },
+  {
+   "kind": "score",
+   "K": 10,
+   "probs": {
+    "0": 0.7,
+    "1": 0.01,
+    "2": 0.01,
+    "3": 0.01,
+    "4": 0,
+    "5": 0,
+    "6": 0,
+    "7": 0.01,
+    "8": 0,
+    "9": 0.26
+   },
+   "conf": 0,
+   "val": 2.53,
+   "choice": null
+  },
+  {
+   "kind": "score",
+   "K": 10,
+   "probs": {
+    "0": 0.53,
+    "1": 0.11,
+    "2": 0.07,
+    "3": 0.06,
+    "4": 0.03,
+    "5": 0.02,
+    "6": 0.03,
+    "7": 0.02,
+    "8": 0.01,
+    "9": 0.12
+   },
+   "conf": 0.15,
+   "val": 2.13,
+   "choice": null
+  },
+  {
+   "kind": "score",
+   "K": 10,
+   "probs": {
+    "0": 0.01,
+    "1": 0.11,
+    "2": 0.16,
+    "3": 0.19,
+    "4": 0.2,
+    "5": 0.16,
+    "6": 0.1,
+    "7": 0.05,
+    "8": 0.01,
+    "9": 0.01
+   },
+   "conf": 0.41,
+   "val": 3.72,
+   "choice": null
+  },
+  {
+   "kind": "choice",
+   "K": 2,
+   "probs": {
+    "no": 0.28,
+    "yes": 0.72
+   },
+   "conf": 0.44,
+   "val": null,
+   "choice": "yes"
+  },
+  {
+   "kind": "choice",
+   "K": 2,
+   "probs": {
+    "yes": 0.9,
+    "no": 0.1
+   },
+   "conf": 0.79,
+   "val": null,
+   "choice": "yes"
+  },
+  {
+   "kind": "choice",
+   "K": 2,
+   "probs": {
+    "yes": 0.96,
+    "no": 0.04
+   },
+   "conf": 0.92,
+   "val": null,
+   "choice": "yes"
+  },
+  {
+   "kind": "choice",
+   "K": 2,
+   "probs": {
+    "no": 0.52,
+    "yes": 0.48
+   },
+   "conf": 0.03,
+   "val": null,
+   "choice": "no"
+  },
+  {
+   "kind": "choice",
+   "K": 2,
+   "probs": {
+    "no": 0.37,
+    "yes": 0.63
+   },
+   "conf": 0.25,
+   "val": null,
+   "choice": "yes"
+  },
+  {
+   "kind": "choice",
+   "K": 3,
+   "probs": {
+    "technical": 0.97,
+    "sales": 0.01,
+    "billing": 0.02
+   },
+   "conf": 0.96,
+   "val": null,
+   "choice": "technical"
+  },
+  {
+   "kind": "choice",
+   "K": 3,
+   "probs": {
+    "sales": 0,
+    "technical": 1,
+    "billing": 0
+   },
+   "conf": 1,
+   "val": null,
+   "choice": "technical"
+  },
+  {
+   "kind": "choice",
+   "K": 3,
+   "probs": {
+    "billing": 0.01,
+    "sales": 0.03,
+    "technical": 0.96
+   },
+   "conf": 0.94,
+   "val": null,
+   "choice": "technical"
+  },
+  {
+   "kind": "choice",
+   "K": 3,
+   "probs": {
+    "sales": 0.24,
+    "billing": 0.13,
+    "technical": 0.63
+   },
+   "conf": 0.45,
+   "val": null,
+   "choice": "technical"
+  },
+  {
+   "kind": "choice",
+   "K": 3,
+   "probs": {
+    "technical": 0.97,
+    "billing": 0,
+    "sales": 0.03
+   },
+   "conf": 0.96,
+   "val": null,
+   "choice": "technical"
+  },
+  {
+   "kind": "choice",
+   "K": 4,
+   "probs": {
+    "technical": 0.98,
+    "legal": 0,
+    "sales": 0,
+    "billing": 0.02
+   },
+   "conf": 0.96,
+   "val": null,
+   "choice": "technical"
+  },
+  {
+   "kind": "choice",
+   "K": 4,
+   "probs": {
+    "billing": 0,
+    "legal": 0,
+    "sales": 0,
+    "technical": 1
+   },
+   "conf": 1,
+   "val": null,
+   "choice": "technical"
+  },
+  {
+   "kind": "choice",
+   "K": 4,
+   "probs": {
+    "sales": 0.02,
+    "billing": 0.01,
+    "legal": 0,
+    "technical": 0.97
+   },
+   "conf": 0.97,
+   "val": null,
+   "choice": "technical"
+  },
+  {
+   "kind": "choice",
+   "K": 4,
+   "probs": {
+    "billing": 0.11,
+    "legal": 0.04,
+    "sales": 0.26,
+    "technical": 0.59
+   },
+   "conf": 0.46,
+   "val": null,
+   "choice": "technical"
+  },
+  {
+   "kind": "choice",
+   "K": 4,
+   "probs": {
+    "billing": 0,
+    "sales": 0.01,
+    "legal": 0,
+    "technical": 0.99
+   },
+   "conf": 0.98,
+   "val": null,
+   "choice": "technical"
+  },
+  {
+   "kind": "choice",
+   "K": 6,
+   "probs": {
+    "other": 0.97,
+    "legal": 0,
+    "billing": 0,
+    "sales": 0,
+    "technical": 0.03,
+    "hr": 0
+   },
+   "conf": 0.96,
+   "val": null,
+   "choice": "other"
+  },
+  {
+   "kind": "choice",
+   "K": 6,
+   "probs": {
+    "billing": 0,
+    "sales": 0,
+    "hr": 0,
+    "legal": 0,
+    "technical": 1,
+    "other": 0
+   },
+   "conf": 0.99,
+   "val": null,
+   "choice": "technical"
+  },
+  {
+   "kind": "choice",
+   "K": 6,
+   "probs": {
+    "technical": 0.58,
+    "hr": 0,
+    "sales": 0,
+    "legal": 0,
+    "billing": 0,
+    "other": 0.42
+   },
+   "conf": 0.48,
+   "val": null,
+   "choice": "technical"
+  },
+  {
+   "kind": "choice",
+   "K": 6,
+   "probs": {
+    "hr": 0,
+    "sales": 0,
+    "billing": 0,
+    "legal": 0,
+    "other": 1,
+    "technical": 0
+   },
+   "conf": 0.99,
+   "val": null,
+   "choice": "other"
+  },
+  {
+   "kind": "choice",
+   "K": 6,
+   "probs": {
+    "other": 0.21,
+    "technical": 0.78,
+    "legal": 0,
+    "hr": 0,
+    "sales": 0.01,
+    "billing": 0
+   },
+   "conf": 0.73,
+   "val": null,
+   "choice": "technical"
+  },
+  {
+   "kind": "choice",
+   "K": 8,
+   "probs": {
+    "c": 0.24,
+    "g": 0.06,
+    "f": 0.06,
+    "h": 0.05,
+    "e": 0.07,
+    "a": 0.25,
+    "d": 0.08,
+    "b": 0.19
+   },
+   "conf": 0.15,
+   "val": null,
+   "choice": "a"
+  },
+  {
+   "kind": "choice",
+   "K": 8,
+   "probs": {
+    "c": 0.09,
+    "d": 0.05,
+    "a": 0.5,
+    "f": 0.06,
+    "h": 0.08,
+    "g": 0.07,
+    "b": 0.08,
+    "e": 0.07
+   },
+   "conf": 0.42,
+   "val": null,
+   "choice": "a"
+  },
+  {
+   "kind": "choice",
+   "K": 8,
+   "probs": {
+    "f": 0.03,
+    "c": 0.06,
+    "g": 0.07,
+    "e": 0.04,
+    "a": 0.67,
+    "d": 0.03,
+    "h": 0.06,
+    "b": 0.04
+   },
+   "conf": 0.62,
+   "val": null,
+   "choice": "a"
+  },
+  {
+   "kind": "choice",
+   "K": 8,
+   "probs": {
+    "a": 0.29000000000000004,
+    "f": 0.06,
+    "d": 0.07,
+    "b": 0.15,
+    "h": 0.06,
+    "g": 0.09,
+    "c": 0.22,
+    "e": 0.06
+   },
+   "conf": 0.17,
+   "val": null,
+   "choice": "a"
+  },
+  {
+   "kind": "choice",
+   "K": 8,
+   "probs": {
+    "d": 0.08,
+    "a": 0.16,
+    "h": 0.04,
+    "f": 0.05,
+    "c": 0.21,
+    "e": 0.06,
+    "g": 0.05,
+    "b": 0.35
+   },
+   "conf": 0.25,
+   "val": null,
+   "choice": "b"
+  },
+  {
+   "kind": "score",
+   "K": 10,
+   "conf": 0.43,
+   "probs": {
+    "0": 0.12,
+    "1": 0.32,
+    "2": 0.22,
+    "3": 0.17,
+    "4": 0.09,
+    "5": 0.03,
+    "6": 0.02,
+    "7": 0.01,
+    "8": 0.01,
+    "9": 0.01
+   }
+  }
+ ]
+}

@@ -1,0 +1,2312 @@
+[
+ {
+  "label": "so1",
+  "rows": [
+   {
+    "case": "buried_fact",
+    "variant": "500",
+    "q": "routing",
+    "type": "choice",
+    "correct": true,
+    "p": 0.9999995037976496,
+    "pred": "billing",
+    "check": "exact",
+    "expected": "billing",
+    "request_ms": 474.0569200075697,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "choice",
+     "choice": "billing",
+     "confidence": 0.999999338396866,
+     "probabilities": {
+      "billing": 0.9999995037976496,
+      "technical": 2.536019260635494e-07,
+      "sales": 4.363462167749859e-09,
+      "general": 2.3823696209875558e-07
+     }
+    },
+    "note": ""
+   },
+   {
+    "case": "buried_fact",
+    "variant": "2000",
+    "q": "routing",
+    "type": "choice",
+    "correct": true,
+    "p": 0.9999904452118921,
+    "pred": "billing",
+    "check": "exact",
+    "expected": "billing",
+    "request_ms": 670.2452620083932,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "choice",
+     "choice": "billing",
+     "confidence": 0.9999872602825227,
+     "probabilities": {
+      "billing": 0.9999904452118921,
+      "technical": 1.6536767164210541e-06,
+      "sales": 1.1861008229432207e-08,
+      "general": 7.889250383277153e-06
+     }
+    },
+    "note": ""
+   },
+   {
+    "case": "buried_fact",
+    "variant": "2000-reversed",
+    "q": "routing",
+    "type": "choice",
+    "correct": true,
+    "p": 0.9993714203751336,
+    "pred": "billing",
+    "check": "exact",
+    "expected": "billing",
+    "request_ms": 394.70198898925446,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "choice",
+     "choice": "billing",
+     "confidence": 0.9991618938335115,
+     "probabilities": {
+      "general": 2.53442622943536e-07,
+      "sales": 1.9934806454375955e-06,
+      "technical": 0.0006263327015980131,
+      "billing": 0.9993714203751336
+     }
+    },
+    "note": ""
+   },
+   {
+    "case": "buried_fact",
+    "variant": "4000",
+    "q": "routing",
+    "type": "choice",
+    "correct": true,
+    "p": 0.9997453825718252,
+    "pred": "billing",
+    "check": "exact",
+    "expected": "billing",
+    "request_ms": 885.1423739979509,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "choice",
+     "choice": "billing",
+     "confidence": 0.999660510095767,
+     "probabilities": {
+      "billing": 0.9997453825718252,
+      "technical": 7.483280432387452e-05,
+      "sales": 2.698892334391644e-07,
+      "general": 0.0001795147346174437
+     }
+    },
+    "note": ""
+   },
+   {
+    "case": "buried_fact",
+    "variant": "6500",
+    "q": "routing",
+    "type": "choice",
+    "correct": true,
+    "p": 0.9995372006353522,
+    "pred": "billing",
+    "check": "exact",
+    "expected": "billing",
+    "request_ms": 2144.6261999954004,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "choice",
+     "choice": "billing",
+     "confidence": 0.9993829341804696,
+     "probabilities": {
+      "billing": 0.9995372006353522,
+      "technical": 3.1188436823527254e-05,
+      "sales": 1.0672096211833771e-06,
+      "general": 0.0004305437182031132
+     }
+    },
+    "note": ""
+   },
+   {
+    "case": "updated_fact_multi",
+    "variant": "2500",
+    "q": "routing",
+    "type": "choice",
+    "correct": true,
+    "p": 0.9999723650953491,
+    "pred": "technical",
+    "check": "exact",
+    "expected": "technical",
+    "request_ms": 1165.903415007051,
+    "questions_in_request": 4,
+    "answer": {
+     "type": "choice",
+     "choice": "technical",
+     "confidence": 0.9999631534604655,
+     "probabilities": {
+      "billing": 2.7264023573634896e-06,
+      "technical": 0.9999723650953491,
+      "sales": 6.08342594627572e-07,
+      "general": 2.430015969889231e-05
+     }
+    },
+    "note": ""
+   },
+   {
+    "case": "updated_fact_multi",
+    "variant": "2500",
+    "q": "billing_unresolved",
+    "type": "noul",
+    "correct": true,
+    "p": 0.9998601763681132,
+    "pred": "no",
+    "check": "exact",
+    "expected": "no",
+    "request_ms": 1165.903415007051,
+    "questions_in_request": 4,
+    "answer": {
+     "type": "noul",
+     "noul": 0.00013982363188685007
+    },
+    "note": ""
+   },
+   {
+    "case": "updated_fact_multi",
+    "variant": "2500",
+    "q": "urgency",
+    "type": "score",
+    "correct": true,
+    "p": 0.9999290334537301,
+    "pred": "4.07",
+    "check": ">=3.0",
+    "expected": 3.0,
+    "request_ms": 1165.903415007051,
+    "questions_in_request": 4,
+    "answer": {
+     "type": "score",
+     "score": 3.067020529263958,
+     "confidence": 0.9433205002024367,
+     "legend": {
+      "0": "Very low: no action needed",
+      "1": "Low: can wait a week or more",
+      "2": "Medium: should be handled within a few days",
+      "3": "High: blocks important work, handle today",
+      "4": "Critical: outage, data loss or security risk, handle immediately"
+     },
+     "probabilities": {
+      "0": 1.2003929749963211e-06,
+      "1": 6.976615329501178e-05,
+      "2": 0.0003543017610442117,
+      "3": 0.9320567671821692,
+      "4": 0.06751796451051663
+     }
+    },
+    "note": ""
+   },
+   {
+    "case": "updated_fact_multi",
+    "variant": "2500",
+    "q": "cancel_threat",
+    "type": "noul",
+    "correct": true,
+    "p": 0.9999962732855736,
+    "pred": "no",
+    "check": "exact",
+    "expected": "no",
+    "request_ms": 1165.903415007051,
+    "questions_in_request": 4,
+    "answer": {
+     "type": "noul",
+     "noul": 3.7267144263701215e-06
+    },
+    "note": ""
+   },
+   {
+    "case": "rules",
+    "variant": "annual-3-exports",
+    "q": "eligible",
+    "type": "noul",
+    "correct": false,
+    "p": 0.9995694436256217,
+    "pred": "no",
+    "check": "exact",
+    "expected": "yes",
+    "request_ms": 512.9725019796751,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "noul",
+     "noul": 0.00043055637437827097
+    },
+    "note": ""
+   },
+   {
+    "case": "rules",
+    "variant": "annual-7-exports",
+    "q": "eligible",
+    "type": "noul",
+    "correct": true,
+    "p": 0.999996910505953,
+    "pred": "no",
+    "check": "exact",
+    "expected": "no",
+    "request_ms": 385.5950980214402,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "noul",
+     "noul": 3.089494047031251e-06
+    },
+    "note": ""
+   },
+   {
+    "case": "rules",
+    "variant": "nonprofit-monthly",
+    "q": "eligible",
+    "type": "noul",
+    "correct": true,
+    "p": 0.999996033019549,
+    "pred": "no",
+    "check": "exact",
+    "expected": "no",
+    "request_ms": 371.8797389883548,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "noul",
+     "noul": 3.966980451061815e-06
+    },
+    "note": ""
+   },
+   {
+    "case": "rules",
+    "variant": "nonprofit-duplicate",
+    "q": "eligible",
+    "type": "noul",
+    "correct": true,
+    "p": 0.9999706884687359,
+    "pred": "yes",
+    "check": "exact",
+    "expected": "yes",
+    "request_ms": 431.8471459846478,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "noul",
+     "noul": 0.9999706884687359
+    },
+    "note": ""
+   },
+   {
+    "case": "distractor",
+    "variant": "2000",
+    "q": "routing",
+    "type": "choice",
+    "correct": true,
+    "p": 0.9988426385811177,
+    "pred": "technical",
+    "check": "exact",
+    "expected": "technical",
+    "request_ms": 613.7611289741471,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "choice",
+     "choice": "technical",
+     "confidence": 0.9984568514414902,
+     "probabilities": {
+      "billing": 0.0002302929816980488,
+      "technical": 0.9988426385811177,
+      "sales": 0.0001232669503615953,
+      "general": 0.0008038014868226735
+     }
+    },
+    "note": ""
+   },
+   {
+    "case": "distractor",
+    "variant": "2000-reversed",
+    "q": "routing",
+    "type": "choice",
+    "correct": true,
+    "p": 0.9999599806783986,
+    "pred": "technical",
+    "check": "exact",
+    "expected": "technical",
+    "request_ms": 369.97385098948143,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "choice",
+     "choice": "technical",
+     "confidence": 0.9999466409045316,
+     "probabilities": {
+      "general": 3.5007265640611147e-06,
+      "sales": 2.4299858728395997e-05,
+      "technical": 0.9999599806783986,
+      "billing": 1.2218736308870302e-05
+     }
+    },
+    "note": ""
+   },
+   {
+    "case": "noul",
+    "variant": "1-trivial",
+    "q": "greeting",
+    "type": "noul",
+    "correct": true,
+    "p": 0.9999975938989201,
+    "pred": "yes",
+    "check": "exact",
+    "expected": "yes",
+    "request_ms": 339.9690179794561,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "noul",
+     "noul": 0.9999975938989201
+    },
+    "note": "floor: should be near certain"
+   },
+   {
+    "case": "noul",
+    "variant": "2-sentiment",
+    "q": "unhappy",
+    "type": "noul",
+    "correct": true,
+    "p": 0.9999982396570551,
+    "pred": "yes",
+    "check": "exact",
+    "expected": "yes",
+    "request_ms": 347.9033700132277,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "noul",
+     "noul": 0.9999982396570551
+    },
+    "note": ""
+   },
+   {
+    "case": "noul",
+    "variant": "3-criteria",
+    "q": "spam",
+    "type": "noul",
+    "correct": true,
+    "p": 0.9999861539888844,
+    "pred": "yes",
+    "check": "exact",
+    "expected": "yes",
+    "request_ms": 432.219490990974,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "noul",
+     "noul": 0.9999861539888844
+    },
+    "note": ""
+   },
+   {
+    "case": "noul",
+    "variant": "4-negation",
+    "q": "wants_refund",
+    "type": "noul",
+    "correct": true,
+    "p": 0.9999999999963629,
+    "pred": "no",
+    "check": "exact",
+    "expected": "no",
+    "request_ms": 342.5124249770306,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "noul",
+     "noul": 3.6370662747892627e-12
+    },
+    "note": "explicit negation: a keyword matcher gets this wrong"
+   },
+   {
+    "case": "noul",
+    "variant": "5-resolved",
+    "q": "billing_open",
+    "type": "noul",
+    "correct": true,
+    "p": 0.9998911033245758,
+    "pred": "no",
+    "check": "exact",
+    "expected": "no",
+    "request_ms": 348.49736900650896,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "noul",
+     "noul": 0.00010889667542428823
+    },
+    "note": "requires noticing the billing issue was closed"
+   },
+   {
+    "case": "noul",
+    "variant": "6-absence",
+    "q": "threat",
+    "type": "noul",
+    "correct": true,
+    "p": 0.9999999999891841,
+    "pred": "no",
+    "check": "exact",
+    "expected": "no",
+    "request_ms": 340.9021639963612,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "noul",
+     "noul": 1.0815940946172752e-11
+    },
+    "note": "absence of evidence; models like to hedge"
+   },
+   {
+    "case": "noul",
+    "variant": "7-policy-duplicate",
+    "q": "eligible",
+    "type": "noul",
+    "correct": true,
+    "p": 0.9999898700127914,
+    "pred": "yes",
+    "check": "exact",
+    "expected": "yes",
+    "request_ms": 356.12873299396597,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "noul",
+     "noul": 0.9999898700127914
+    },
+    "note": "rule 3 overrides rule 4"
+   },
+   {
+    "case": "noul",
+    "variant": "8-policy-datemath",
+    "q": "eligible",
+    "type": "noul",
+    "correct": true,
+    "p": 0.9992903295780172,
+    "pred": "yes",
+    "check": "exact",
+    "expected": "yes",
+    "request_ms": 361.99461997603066,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "noul",
+     "noul": 0.9992903295780172
+    },
+    "note": "KNOWN BLIND SPOT: needs 30 Aug -> 19 Sep = 20 days, i.e. within 30"
+   },
+   {
+    "case": "noul",
+    "variant": "9-policy-datemath-neg",
+    "q": "eligible",
+    "type": "noul",
+    "correct": true,
+    "p": 0.9999885212366708,
+    "pred": "no",
+    "check": "exact",
+    "expected": "no",
+    "request_ms": 346.20401400025,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "noul",
+     "noul": 1.147876332914211e-05
+    },
+    "note": "same dates, fails the export test"
+   },
+   {
+    "case": "noul",
+    "variant": "10-ambiguous",
+    "q": "actionable",
+    "type": "noul",
+    "correct": false,
+    "p": 0.9999988634046647,
+    "pred": "0.00",
+    "check": "unsure",
+    "expected": "unsure",
+    "request_ms": 370.31324600684457,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "noul",
+     "noul": 1.1365953352416818e-06
+    },
+    "note": "genuinely underdetermined; should not be confident"
+   },
+   {
+    "case": "choice",
+    "variant": "1-binary",
+    "q": "kind",
+    "type": "choice",
+    "correct": true,
+    "p": 0.9999975938965137,
+    "pred": "billing",
+    "check": "exact",
+    "expected": "billing",
+    "request_ms": 342.3455870070029,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "choice",
+     "choice": "billing",
+     "confidence": 0.9999951877930273,
+     "probabilities": {
+      "billing": 0.9999975938965137,
+      "technical": 2.406103486313514e-06
+     }
+    },
+    "note": ""
+   },
+   {
+    "case": "choice",
+    "variant": "2-routing4",
+    "q": "routing",
+    "type": "choice",
+    "correct": true,
+    "p": 0.9999999851802341,
+    "pred": "technical",
+    "check": "exact",
+    "expected": "technical",
+    "request_ms": 380.22438099142164,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "choice",
+     "choice": "technical",
+     "confidence": 0.9999999802403122,
+     "probabilities": {
+      "billing": 7.349269460209012e-10,
+      "technical": 0.9999999851802341,
+      "sales": 3.61743721014511e-09,
+      "general": 1.04674016395719e-08
+     }
+    },
+    "note": ""
+   },
+   {
+    "case": "choice",
+    "variant": "3-distractor",
+    "q": "routing",
+    "type": "choice",
+    "correct": true,
+    "p": 0.9997536915084724,
+    "pred": "technical",
+    "check": "exact",
+    "expected": "technical",
+    "request_ms": 369.8068730009254,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "choice",
+     "choice": "technical",
+     "confidence": 0.9996715886779631,
+     "probabilities": {
+      "billing": 3.0887444009226373e-06,
+      "technical": 0.9997536915084724,
+      "sales": 8.479738165290812e-05,
+      "general": 0.0001584223654738829
+     }
+    },
+    "note": "most of the text is sales talk"
+   },
+   {
+    "case": "choice",
+    "variant": "4-nulldesc",
+    "q": "routing",
+    "type": "choice",
+    "correct": true,
+    "p": 0.94630817156678,
+    "pred": "sales",
+    "check": "exact",
+    "expected": "sales",
+    "request_ms": 393.3396869979333,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "choice",
+     "choice": "sales",
+     "confidence": 0.9284108954223734,
+     "probabilities": {
+      "billing": 0.047113910952801846,
+      "technical": 0.0016121489920719392,
+      "sales": 0.94630817156678,
+      "general": 0.004965768488346209
+     }
+    },
+    "note": "keys must carry the meaning on their own"
+   },
+   {
+    "case": "choice",
+    "variant": "5-eight",
+    "q": "routing",
+    "type": "choice",
+    "correct": true,
+    "p": 0.999999949099298,
+    "pred": "security",
+    "check": "exact",
+    "expected": "security",
+    "request_ms": 342.24211098626256,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "choice",
+     "choice": "security",
+     "confidence": 0.9999999418277692,
+     "probabilities": {
+      "billing": 1.2116896443519635e-09,
+      "technical": 3.432128740920132e-08,
+      "sales": 1.5079721267679672e-09,
+      "general": 6.485707299574993e-10,
+      "security": 0.999999949099298,
+      "legal": 1.262609603238144e-08,
+      "partnerships": 3.0334056700130836e-11,
+      "careers": 5.547519432975111e-10
+     }
+    },
+    "note": ""
+   },
+   {
+    "case": "choice",
+    "variant": "6-sixteen",
+    "q": "routing",
+    "type": "choice",
+    "correct": true,
+    "p": 0.9999999483022511,
+    "pred": "accessibility",
+    "check": "exact",
+    "expected": "accessibility",
+    "request_ms": 371.0638179909438,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "choice",
+     "choice": "accessibility",
+     "confidence": 0.9999999448557345,
+     "probabilities": {
+      "billing": 1.2995651645559002e-11,
+      "technical": 4.840077295416247e-08,
+      "sales": 1.267172926103016e-10,
+      "general": 4.122566377998594e-10,
+      "security": 5.801540407037172e-11,
+      "legal": 6.729904610018395e-11,
+      "partnerships": 0.0,
+      "careers": 3.477816727370166e-11,
+      "accessibility": 0.9999999483022511,
+      "localisation": 1.7087562790976905e-09,
+      "data_export": 1.2871279960722244e-10,
+      "mobile": 3.2241956609446245e-10,
+      "api": 2.5004629049566084e-10,
+      "billing_disputes": 3.154242807954724e-11,
+      "training": 6.835885186633157e-11,
+      "status": 7.507751121329587e-11
+     }
+    },
+    "note": "16 options: stresses single-token label allocation"
+   },
+   {
+    "case": "choice",
+    "variant": "7-reversed",
+    "q": "routing",
+    "type": "choice",
+    "correct": true,
+    "p": 0.9999999415223261,
+    "pred": "technical",
+    "check": "exact",
+    "expected": "technical",
+    "request_ms": 351.30665701581165,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "choice",
+     "choice": "technical",
+     "confidence": 0.9999999220297681,
+     "probabilities": {
+      "general": 1.0102783343065893e-10,
+      "sales": 1.4307241081154838e-08,
+      "technical": 0.9999999415223261,
+      "billing": 4.406940503970537e-08
+     }
+    },
+    "note": ""
+   },
+   {
+    "case": "choice",
+    "variant": "8-ambiguous",
+    "q": "routing",
+    "type": "choice",
+    "correct": false,
+    "p": 0.9995965537748561,
+    "pred": "conf=1.00",
+    "check": "unsure",
+    "expected": "unsure",
+    "request_ms": 455.7575100043323,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "choice",
+     "choice": "general",
+     "confidence": 0.9994620716998082,
+     "probabilities": {
+      "billing": 0.00033532717944850934,
+      "technical": 5.1424088486529526e-05,
+      "sales": 1.6694957208805915e-05,
+      "general": 0.9995965537748561
+     }
+    },
+    "note": "no signal; a flat distribution is the correct answer"
+   },
+   {
+    "case": "score",
+    "variant": "1-two-levels",
+    "q": "satisfaction",
+    "type": "score",
+    "correct": true,
+    "p": 0.9999999970010391,
+    "pred": "1.00",
+    "check": ">=0.7",
+    "expected": 0.7,
+    "request_ms": 409.8162630107254,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "score",
+     "score": 0.9999999970010391,
+     "confidence": 0.9999999940020784,
+     "legend": {
+      "0": "Dissatisfied",
+      "1": "Satisfied"
+     },
+     "probabilities": {
+      "0": 2.9989608152792046e-09,
+      "1": 0.9999999970010391
+     }
+    },
+    "note": ""
+   },
+   {
+    "case": "score",
+    "variant": "2-three-low",
+    "q": "anger",
+    "type": "score",
+    "correct": true,
+    "p": 2.3588428943379544e-08,
+    "pred": "1.00",
+    "check": "in [1.0,1.6]",
+    "expected": [
+     1.0,
+     1.6
+    ],
+    "request_ms": 329.97489100671373,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "score",
+     "score": 1.9056091286976823e-05,
+     "confidence": 0.9999714158630695,
+     "legend": {
+      "0": "Calm and satisfied",
+      "1": "Mildly annoyed",
+      "2": "Angry"
+     },
+     "probabilities": {
+      "0": 0.9999904601601419,
+      "1": 2.3588428943379544e-08,
+      "2": 9.516251429016723e-06
+     }
+    },
+    "note": ""
+   },
+   {
+    "case": "score",
+    "variant": "3-three-high",
+    "q": "anger",
+    "type": "score",
+    "correct": true,
+    "p": 0.9999980044877188,
+    "pred": "3.00",
+    "check": ">=2.5",
+    "expected": 2.5,
+    "request_ms": 339.3155009835027,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "score",
+     "score": 1.9999980037053946,
+     "confidence": 0.9999970055580919,
+     "legend": {
+      "0": "Calm and satisfied",
+      "1": "Mildly annoyed",
+      "2": "Angry"
+     },
+     "probabilities": {
+      "0": 7.823242051687417e-10,
+      "1": 1.9947299569984862e-06,
+      "2": 0.9999980044877188
+     }
+    },
+    "note": ""
+   },
+   {
+    "case": "score",
+    "variant": "4-urgency5-low",
+    "q": "urgency",
+    "type": "score",
+    "correct": true,
+    "p": 0.9979245561240082,
+    "pred": "2.35",
+    "check": "in [1.0,2.6]",
+    "expected": [
+     1.0,
+     2.6
+    ],
+    "request_ms": 354.57193400361575,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "score",
+     "score": 1.3458660185287672,
+     "confidence": 0.7083302885519451,
+     "legend": {
+      "0": "Very low: no action needed",
+      "1": "Low: can wait a week or more",
+      "2": "Medium: should be handled within a few days",
+      "3": "High: blocks important work, handle today",
+      "4": "Critical: outage, data loss or security risk, handle immediately"
+     },
+     "probabilities": {
+      "0": 0.0020688176044493796,
+      "1": 0.6500030142124761,
+      "2": 0.3479215419115321,
+      "3": 6.584592942922618e-06,
+      "4": 4.1678599534531073e-08
+     }
+    },
+    "note": ""
+   },
+   {
+    "case": "score",
+    "variant": "5-urgency5-high",
+    "q": "urgency",
+    "type": "score",
+    "correct": true,
+    "p": 0.9999994613972318,
+    "pred": "5.00",
+    "check": ">=4.3",
+    "expected": 4.3,
+    "request_ms": 409.15592201054096,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "score",
+     "score": 3.999999130502837,
+     "confidence": 0.9999992754190304,
+     "legend": {
+      "0": "Very low: no action needed",
+      "1": "Low: can wait a week or more",
+      "2": "Medium: should be handled within a few days",
+      "3": "High: blocks important work, handle today",
+      "4": "Critical: outage, data loss or security risk, handle immediately"
+     },
+     "probabilities": {
+      "0": 1.1997353458200594e-10,
+      "1": 3.028843311723624e-08,
+      "2": 2.6995760837469304e-07,
+      "3": 2.3823675321981185e-07,
+      "4": 0.9999994613972318
+     }
+    },
+    "note": ""
+   },
+   {
+    "case": "score",
+    "variant": "6-ten-levels",
+    "q": "severity",
+    "type": "score",
+    "correct": true,
+    "p": 0.9779697480802624,
+    "pred": "2.00",
+    "check": "in [0.0,3.0]",
+    "expected": [
+     0.0,
+     3.0
+    ],
+    "request_ms": 365.41616200702265,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "score",
+     "score": 2.0033352476668593,
+     "confidence": 0.9657124822617722,
+     "legend": {
+      "0": "Severity 0 of 9, where 0 is harmless and 9 is catastrophic",
+      "1": "Severity 1 of 9, where 0 is harmless and 9 is catastrophic",
+      "2": "Severity 2 of 9, where 0 is harmless and 9 is catastrophic",
+      "3": "Severity 3 of 9, where 0 is harmless and 9 is catastrophic",
+      "4": "Severity 4 of 9, where 0 is harmless and 9 is catastrophic",
+      "5": "Severity 5 of 9, where 0 is harmless and 9 is catastrophic",
+      "6": "Severity 6 of 9, where 0 is harmless and 9 is catastrophic",
+      "7": "Severity 7 of 9, where 0 is harmless and 9 is catastrophic",
+      "8": "Severity 8 of 9, where 0 is harmless and 9 is catastrophic",
+      "9": "Severity 9 of 9, where 0 is harmless and 9 is catastrophic"
+     },
+     "probabilities": {
+      "0": 2.5783659345515876e-05,
+      "1": 0.04114020602066389,
+      "2": 0.9363467321029504,
+      "3": 0.000457026297302557,
+      "4": 0.022020765444186116,
+      "5": 9.485278191383217e-06,
+      "6": 0.0,
+      "7": 1.6863766921836239e-10,
+      "8": 5.827961901800075e-11,
+      "9": 9.704427825593574e-10
+     }
+    },
+    "note": "10 levels, the documented Jev maximum"
+   },
+   {
+    "case": "score",
+    "variant": "7-ten-levels-high",
+    "q": "severity",
+    "type": "score",
+    "correct": true,
+    "p": 0.9992912229649762,
+    "pred": "7.29",
+    "check": ">=7.0",
+    "expected": 7.0,
+    "request_ms": 375.2713320136536,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "score",
+     "score": 7.294176759762609,
+     "confidence": 0.8799476837049025,
+     "legend": {
+      "0": "Severity 0 of 9, where 0 is harmless and 9 is catastrophic",
+      "1": "Severity 1 of 9, where 0 is harmless and 9 is catastrophic",
+      "2": "Severity 2 of 9, where 0 is harmless and 9 is catastrophic",
+      "3": "Severity 3 of 9, where 0 is harmless and 9 is catastrophic",
+      "4": "Severity 4 of 9, where 0 is harmless and 9 is catastrophic",
+      "5": "Severity 5 of 9, where 0 is harmless and 9 is catastrophic",
+      "6": "Severity 6 of 9, where 0 is harmless and 9 is catastrophic",
+      "7": "Severity 7 of 9, where 0 is harmless and 9 is catastrophic",
+      "8": "Severity 8 of 9, where 0 is harmless and 9 is catastrophic",
+      "9": "Severity 9 of 9, where 0 is harmless and 9 is catastrophic"
+     },
+     "probabilities": {
+      "0": 3.828104528518561e-05,
+      "1": 0.00010405865191714285,
+      "2": 0.000133613953887874,
+      "3": 0.00022029216783728394,
+      "4": 0.00013361400975433989,
+      "5": 5.5698582674930245e-05,
+      "6": 2.32186236671018e-05,
+      "7": 0.7441176941013415,
+      "8": 0.2131932824770931,
+      "9": 0.04198024638654155
+     }
+    },
+    "note": ""
+   },
+   {
+    "case": "score",
+    "variant": "8-midpoint",
+    "q": "anger",
+    "type": "score",
+    "correct": true,
+    "p": 7.411271542936611e-06,
+    "pred": "2.00",
+    "check": "in [1.2,2.2]",
+    "expected": [
+     1.2,
+     2.2
+    ],
+    "request_ms": 334.77920800214633,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "score",
+     "score": 1.000006526121384,
+     "confidence": 0.9999875553674471,
+     "legend": {
+      "0": "Calm and satisfied",
+      "1": "Mildly annoyed",
+      "2": "Angry"
+     },
+     "probabilities": {
+      "0": 8.851501590035903e-07,
+      "1": 0.999991703578298,
+      "2": 7.411271542936611e-06
+     }
+    },
+    "note": "should land between levels, which is what score is for"
+   },
+   {
+    "case": "mixed",
+    "variant": "fanout",
+    "q": "is_bug",
+    "type": "noul",
+    "correct": true,
+    "p": 0.999738809696633,
+    "pred": "yes",
+    "check": "exact",
+    "expected": "yes",
+    "request_ms": 784.0440929867327,
+    "questions_in_request": 4,
+    "answer": {
+     "type": "noul",
+     "noul": 0.999738809696633
+    },
+    "note": ""
+   },
+   {
+    "case": "mixed",
+    "variant": "fanout",
+    "q": "threat",
+    "type": "noul",
+    "correct": true,
+    "p": 0.999925153839428,
+    "pred": "no",
+    "check": "exact",
+    "expected": "no",
+    "request_ms": 784.0440929867327,
+    "questions_in_request": 4,
+    "answer": {
+     "type": "noul",
+     "noul": 7.484616057195101e-05
+    },
+    "note": "'escalate internally' is not a cancellation threat"
+   },
+   {
+    "case": "mixed",
+    "variant": "fanout",
+    "q": "routing",
+    "type": "choice",
+    "correct": true,
+    "p": 0.9999997508934089,
+    "pred": "technical",
+    "check": "exact",
+    "expected": "technical",
+    "request_ms": 784.0440929867327,
+    "questions_in_request": 4,
+    "answer": {
+     "type": "choice",
+     "choice": "technical",
+     "confidence": 0.9999996678578785,
+     "probabilities": {
+      "billing": 1.0364131173309795e-09,
+      "technical": 0.9999997508934089,
+      "sales": 9.833213874573189e-09,
+      "general": 2.3823696420318377e-07
+     }
+    },
+    "note": ""
+   },
+   {
+    "case": "mixed",
+    "variant": "fanout",
+    "q": "urgency",
+    "type": "score",
+    "correct": true,
+    "p": 0.9998611363678385,
+    "pred": "4.05",
+    "check": ">=3.5",
+    "expected": 3.5,
+    "request_ms": 784.0440929867327,
+    "questions_in_request": 4,
+    "answer": {
+     "type": "score",
+     "score": 3.047258202994376,
+     "confidence": 0.9603496908219258,
+     "legend": {
+      "0": "Very low: no action needed",
+      "1": "Low: can wait a week or more",
+      "2": "Medium: should be handled within a few days",
+      "3": "High: blocks important work, handle today",
+      "4": "Critical: outage, data loss or security risk, handle immediately"
+     },
+     "probabilities": {
+      "0": 8.97434234309555e-07,
+      "1": 2.0425509026224954e-05,
+      "2": 0.00011754068890109335,
+      "3": 0.9524418493638058,
+      "4": 0.04741928700403263
+     }
+    },
+    "note": ""
+   }
+  ],
+  "latencies": [
+   474.0569200075697,
+   670.2452620083932,
+   394.70198898925446,
+   885.1423739979509,
+   2144.6261999954004,
+   1165.903415007051,
+   512.9725019796751,
+   385.5950980214402,
+   371.8797389883548,
+   431.8471459846478,
+   613.7611289741471,
+   369.97385098948143,
+   339.9690179794561,
+   347.9033700132277,
+   432.219490990974,
+   342.5124249770306,
+   348.49736900650896,
+   340.9021639963612,
+   356.12873299396597,
+   361.99461997603066,
+   346.20401400025,
+   370.31324600684457,
+   342.3455870070029,
+   380.22438099142164,
+   369.8068730009254,
+   393.3396869979333,
+   342.24211098626256,
+   371.0638179909438,
+   351.30665701581165,
+   455.7575100043323,
+   409.8162630107254,
+   329.97489100671373,
+   339.3155009835027,
+   354.57193400361575,
+   409.15592201054096,
+   365.41616200702265,
+   375.2713320136536,
+   334.77920800214633,
+   784.0440929867327
+  ],
+  "failures": 0,
+  "server_timing": "prepare;dur=0.0, warmup;dur=356.1, branches;dur=426.3"
+ },
+ {
+  "label": "jev-latest",
+  "rows": [
+   {
+    "case": "buried_fact",
+    "variant": "500",
+    "q": "routing",
+    "type": "choice",
+    "correct": true,
+    "p": 1.0,
+    "pred": "billing",
+    "check": "exact",
+    "expected": "billing",
+    "request_ms": 330.6333910149988,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "choice",
+     "choice": "billing",
+     "confidence": 1.0,
+     "probabilities": {
+      "technical": 0.0,
+      "general": 0.0,
+      "sales": 0.0,
+      "billing": 1.0
+     }
+    },
+    "note": ""
+   },
+   {
+    "case": "buried_fact",
+    "variant": "2000",
+    "q": "routing",
+    "type": "choice",
+    "correct": true,
+    "p": 1.0,
+    "pred": "billing",
+    "check": "exact",
+    "expected": "billing",
+    "request_ms": 329.6230940031819,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "choice",
+     "choice": "billing",
+     "confidence": 1.0,
+     "probabilities": {
+      "sales": 0.0,
+      "general": 0.0,
+      "technical": 0.0,
+      "billing": 1.0
+     }
+    },
+    "note": ""
+   },
+   {
+    "case": "buried_fact",
+    "variant": "2000-reversed",
+    "q": "routing",
+    "type": "choice",
+    "correct": true,
+    "p": 1.0,
+    "pred": "billing",
+    "check": "exact",
+    "expected": "billing",
+    "request_ms": 383.7901859951671,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "choice",
+     "choice": "billing",
+     "confidence": 1.0,
+     "probabilities": {
+      "sales": 0.0,
+      "billing": 1.0,
+      "general": 0.0,
+      "technical": 0.0
+     }
+    },
+    "note": ""
+   },
+   {
+    "case": "buried_fact",
+    "variant": "4000",
+    "q": "routing",
+    "type": "choice",
+    "correct": true,
+    "p": 1.0,
+    "pred": "billing",
+    "check": "exact",
+    "expected": "billing",
+    "request_ms": 327.1790989965666,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "choice",
+     "choice": "billing",
+     "confidence": 1.0,
+     "probabilities": {
+      "general": 0.0,
+      "billing": 1.0,
+      "sales": 0.0,
+      "technical": 0.0
+     }
+    },
+    "note": ""
+   },
+   {
+    "case": "buried_fact",
+    "variant": "6500",
+    "q": "routing",
+    "type": "choice",
+    "correct": true,
+    "p": 1.0,
+    "pred": "billing",
+    "check": "exact",
+    "expected": "billing",
+    "request_ms": 344.94439099216834,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "choice",
+     "choice": "billing",
+     "confidence": 1.0,
+     "probabilities": {
+      "sales": 0.0,
+      "technical": 0.0,
+      "billing": 1.0,
+      "general": 0.0
+     }
+    },
+    "note": ""
+   },
+   {
+    "case": "updated_fact_multi",
+    "variant": "2500",
+    "q": "routing",
+    "type": "choice",
+    "correct": true,
+    "p": 1.0,
+    "pred": "technical",
+    "check": "exact",
+    "expected": "technical",
+    "request_ms": 338.1321140041109,
+    "questions_in_request": 4,
+    "answer": {
+     "type": "choice",
+     "choice": "technical",
+     "confidence": 1.0,
+     "probabilities": {
+      "general": 0.0,
+      "billing": 0.0,
+      "sales": 0.0,
+      "technical": 1.0
+     }
+    },
+    "note": ""
+   },
+   {
+    "case": "updated_fact_multi",
+    "variant": "2500",
+    "q": "billing_unresolved",
+    "type": "noul",
+    "correct": true,
+    "p": 0.94,
+    "pred": "no",
+    "check": "exact",
+    "expected": "no",
+    "request_ms": 338.1321140041109,
+    "questions_in_request": 4,
+    "answer": {
+     "type": "noul",
+     "noul": 0.06
+    },
+    "note": ""
+   },
+   {
+    "case": "updated_fact_multi",
+    "variant": "2500",
+    "q": "urgency",
+    "type": "score",
+    "correct": true,
+    "p": 1.0,
+    "pred": "4.38",
+    "check": ">=3.0",
+    "expected": 3.0,
+    "request_ms": 338.1321140041109,
+    "questions_in_request": 4,
+    "answer": {
+     "type": "score",
+     "score": 3.38,
+     "confidence": 0.68,
+     "legend": {
+      "0": "Very low: no action needed",
+      "1": "Low: can wait a week or more",
+      "2": "Medium: should be handled within a few days",
+      "3": "High: blocks important work, handle today",
+      "4": "Critical: outage, data loss or security risk, handle immediately"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.0,
+      "2": 0.0,
+      "3": 0.62,
+      "4": 0.38
+     }
+    },
+    "note": ""
+   },
+   {
+    "case": "updated_fact_multi",
+    "variant": "2500",
+    "q": "cancel_threat",
+    "type": "noul",
+    "correct": true,
+    "p": 0.98,
+    "pred": "no",
+    "check": "exact",
+    "expected": "no",
+    "request_ms": 338.1321140041109,
+    "questions_in_request": 4,
+    "answer": {
+     "type": "noul",
+     "noul": 0.02
+    },
+    "note": ""
+   },
+   {
+    "case": "rules",
+    "variant": "annual-3-exports",
+    "q": "eligible",
+    "type": "noul",
+    "correct": true,
+    "p": 0.94,
+    "pred": "yes",
+    "check": "exact",
+    "expected": "yes",
+    "request_ms": 319.4899990048725,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "noul",
+     "noul": 0.94
+    },
+    "note": ""
+   },
+   {
+    "case": "rules",
+    "variant": "annual-7-exports",
+    "q": "eligible",
+    "type": "noul",
+    "correct": true,
+    "p": 0.91,
+    "pred": "no",
+    "check": "exact",
+    "expected": "no",
+    "request_ms": 355.8071500156075,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "noul",
+     "noul": 0.09
+    },
+    "note": ""
+   },
+   {
+    "case": "rules",
+    "variant": "nonprofit-monthly",
+    "q": "eligible",
+    "type": "noul",
+    "correct": true,
+    "p": 0.94,
+    "pred": "no",
+    "check": "exact",
+    "expected": "no",
+    "request_ms": 321.4455630222801,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "noul",
+     "noul": 0.06
+    },
+    "note": ""
+   },
+   {
+    "case": "rules",
+    "variant": "nonprofit-duplicate",
+    "q": "eligible",
+    "type": "noul",
+    "correct": true,
+    "p": 0.98,
+    "pred": "yes",
+    "check": "exact",
+    "expected": "yes",
+    "request_ms": 345.95036902464926,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "noul",
+     "noul": 0.98
+    },
+    "note": ""
+   },
+   {
+    "case": "distractor",
+    "variant": "2000",
+    "q": "routing",
+    "type": "choice",
+    "correct": true,
+    "p": 1.0,
+    "pred": "technical",
+    "check": "exact",
+    "expected": "technical",
+    "request_ms": 465.85532499011606,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "choice",
+     "choice": "technical",
+     "confidence": 1.0,
+     "probabilities": {
+      "billing": 0.0,
+      "sales": 0.0,
+      "general": 0.0,
+      "technical": 1.0
+     }
+    },
+    "note": ""
+   },
+   {
+    "case": "distractor",
+    "variant": "2000-reversed",
+    "q": "routing",
+    "type": "choice",
+    "correct": true,
+    "p": 1.0,
+    "pred": "technical",
+    "check": "exact",
+    "expected": "technical",
+    "request_ms": 337.93197898194194,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "choice",
+     "choice": "technical",
+     "confidence": 1.0,
+     "probabilities": {
+      "billing": 0.0,
+      "general": 0.0,
+      "sales": 0.0,
+      "technical": 1.0
+     }
+    },
+    "note": ""
+   },
+   {
+    "case": "noul",
+    "variant": "1-trivial",
+    "q": "greeting",
+    "type": "noul",
+    "correct": true,
+    "p": 0.99,
+    "pred": "yes",
+    "check": "exact",
+    "expected": "yes",
+    "request_ms": 327.9646640003193,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "noul",
+     "noul": 0.99
+    },
+    "note": "floor: should be near certain"
+   },
+   {
+    "case": "noul",
+    "variant": "2-sentiment",
+    "q": "unhappy",
+    "type": "noul",
+    "correct": true,
+    "p": 0.97,
+    "pred": "yes",
+    "check": "exact",
+    "expected": "yes",
+    "request_ms": 351.2158940138761,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "noul",
+     "noul": 0.97
+    },
+    "note": ""
+   },
+   {
+    "case": "noul",
+    "variant": "3-criteria",
+    "q": "spam",
+    "type": "noul",
+    "correct": true,
+    "p": 0.93,
+    "pred": "yes",
+    "check": "exact",
+    "expected": "yes",
+    "request_ms": 345.42589698685333,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "noul",
+     "noul": 0.93
+    },
+    "note": ""
+   },
+   {
+    "case": "noul",
+    "variant": "4-negation",
+    "q": "wants_refund",
+    "type": "noul",
+    "correct": true,
+    "p": 0.98,
+    "pred": "no",
+    "check": "exact",
+    "expected": "no",
+    "request_ms": 384.120204980718,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "noul",
+     "noul": 0.02
+    },
+    "note": "explicit negation: a keyword matcher gets this wrong"
+   },
+   {
+    "case": "noul",
+    "variant": "5-resolved",
+    "q": "billing_open",
+    "type": "noul",
+    "correct": true,
+    "p": 0.9,
+    "pred": "no",
+    "check": "exact",
+    "expected": "no",
+    "request_ms": 308.44875899492763,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "noul",
+     "noul": 0.1
+    },
+    "note": "requires noticing the billing issue was closed"
+   },
+   {
+    "case": "noul",
+    "variant": "6-absence",
+    "q": "threat",
+    "type": "noul",
+    "correct": true,
+    "p": 0.99,
+    "pred": "no",
+    "check": "exact",
+    "expected": "no",
+    "request_ms": 358.02634499850683,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "noul",
+     "noul": 0.01
+    },
+    "note": "absence of evidence; models like to hedge"
+   },
+   {
+    "case": "noul",
+    "variant": "7-policy-duplicate",
+    "q": "eligible",
+    "type": "noul",
+    "correct": true,
+    "p": 0.98,
+    "pred": "yes",
+    "check": "exact",
+    "expected": "yes",
+    "request_ms": 308.6334550171159,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "noul",
+     "noul": 0.98
+    },
+    "note": "rule 3 overrides rule 4"
+   },
+   {
+    "case": "noul",
+    "variant": "8-policy-datemath",
+    "q": "eligible",
+    "type": "noul",
+    "correct": true,
+    "p": 0.86,
+    "pred": "yes",
+    "check": "exact",
+    "expected": "yes",
+    "request_ms": 349.8754309839569,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "noul",
+     "noul": 0.86
+    },
+    "note": "KNOWN BLIND SPOT: needs 30 Aug -> 19 Sep = 20 days, i.e. within 30"
+   },
+   {
+    "case": "noul",
+    "variant": "9-policy-datemath-neg",
+    "q": "eligible",
+    "type": "noul",
+    "correct": true,
+    "p": 0.91,
+    "pred": "no",
+    "check": "exact",
+    "expected": "no",
+    "request_ms": 314.17267498909496,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "noul",
+     "noul": 0.09
+    },
+    "note": "same dates, fails the export test"
+   },
+   {
+    "case": "noul",
+    "variant": "10-ambiguous",
+    "q": "actionable",
+    "type": "noul",
+    "correct": false,
+    "p": 0.9,
+    "pred": "0.10",
+    "check": "unsure",
+    "expected": "unsure",
+    "request_ms": 341.52554799220525,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "noul",
+     "noul": 0.1
+    },
+    "note": "genuinely underdetermined; should not be confident"
+   },
+   {
+    "case": "choice",
+    "variant": "1-binary",
+    "q": "kind",
+    "type": "choice",
+    "correct": true,
+    "p": 1.0,
+    "pred": "billing",
+    "check": "exact",
+    "expected": "billing",
+    "request_ms": 363.9085670001805,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "choice",
+     "choice": "billing",
+     "confidence": 1.0,
+     "probabilities": {
+      "technical": 0.0,
+      "billing": 1.0
+     }
+    },
+    "note": ""
+   },
+   {
+    "case": "choice",
+    "variant": "2-routing4",
+    "q": "routing",
+    "type": "choice",
+    "correct": true,
+    "p": 1.0,
+    "pred": "technical",
+    "check": "exact",
+    "expected": "technical",
+    "request_ms": 392.3068919975776,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "choice",
+     "choice": "technical",
+     "confidence": 1.0,
+     "probabilities": {
+      "technical": 1.0,
+      "sales": 0.0,
+      "general": 0.0,
+      "billing": 0.0
+     }
+    },
+    "note": ""
+   },
+   {
+    "case": "choice",
+    "variant": "3-distractor",
+    "q": "routing",
+    "type": "choice",
+    "correct": true,
+    "p": 1.0,
+    "pred": "technical",
+    "check": "exact",
+    "expected": "technical",
+    "request_ms": 360.1519250078127,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "choice",
+     "choice": "technical",
+     "confidence": 1.0,
+     "probabilities": {
+      "technical": 1.0,
+      "billing": 0.0,
+      "general": 0.0,
+      "sales": 0.0
+     }
+    },
+    "note": "most of the text is sales talk"
+   },
+   {
+    "case": "choice",
+    "variant": "4-nulldesc",
+    "q": "routing",
+    "type": "choice",
+    "correct": true,
+    "p": 0.61,
+    "pred": "sales",
+    "check": "exact",
+    "expected": "sales",
+    "request_ms": 320.5869750236161,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "choice",
+     "choice": "sales",
+     "confidence": 0.48,
+     "probabilities": {
+      "billing": 0.38,
+      "technical": 0.0,
+      "general": 0.01,
+      "sales": 0.61
+     }
+    },
+    "note": "keys must carry the meaning on their own"
+   },
+   {
+    "case": "choice",
+    "variant": "5-eight",
+    "q": "routing",
+    "type": "choice",
+    "correct": true,
+    "p": 1.0,
+    "pred": "security",
+    "check": "exact",
+    "expected": "security",
+    "request_ms": 319.00754099478945,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "choice",
+     "choice": "security",
+     "confidence": 1.0,
+     "probabilities": {
+      "general": 0.0,
+      "sales": 0.0,
+      "legal": 0.0,
+      "technical": 0.0,
+      "billing": 0.0,
+      "security": 1.0,
+      "careers": 0.0,
+      "partnerships": 0.0
+     }
+    },
+    "note": ""
+   },
+   {
+    "case": "choice",
+    "variant": "6-sixteen",
+    "q": "routing",
+    "type": "choice",
+    "correct": true,
+    "p": 1.0,
+    "pred": "accessibility",
+    "check": "exact",
+    "expected": "accessibility",
+    "request_ms": 315.24330598767847,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "choice",
+     "choice": "accessibility",
+     "confidence": 1.0,
+     "probabilities": {
+      "general": 0.0,
+      "status": 0.0,
+      "careers": 0.0,
+      "training": 0.0,
+      "data_export": 0.0,
+      "accessibility": 1.0,
+      "security": 0.0,
+      "api": 0.0,
+      "billing_disputes": 0.0,
+      "billing": 0.0,
+      "partnerships": 0.0,
+      "mobile": 0.0,
+      "localisation": 0.0,
+      "technical": 0.0,
+      "sales": 0.0,
+      "legal": 0.0
+     }
+    },
+    "note": "16 options: stresses single-token label allocation"
+   },
+   {
+    "case": "choice",
+    "variant": "7-reversed",
+    "q": "routing",
+    "type": "choice",
+    "correct": true,
+    "p": 1.0,
+    "pred": "technical",
+    "check": "exact",
+    "expected": "technical",
+    "request_ms": 336.6912140045315,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "choice",
+     "choice": "technical",
+     "confidence": 1.0,
+     "probabilities": {
+      "billing": 0.0,
+      "technical": 1.0,
+      "general": 0.0,
+      "sales": 0.0
+     }
+    },
+    "note": ""
+   },
+   {
+    "case": "choice",
+    "variant": "8-ambiguous",
+    "q": "routing",
+    "type": "choice",
+    "correct": false,
+    "p": 0.98,
+    "pred": "conf=0.97",
+    "check": "unsure",
+    "expected": "unsure",
+    "request_ms": 405.3600199986249,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "choice",
+     "choice": "general",
+     "confidence": 0.97,
+     "probabilities": {
+      "general": 0.98,
+      "billing": 0.02,
+      "technical": 0.0,
+      "sales": 0.0
+     }
+    },
+    "note": "no signal; a flat distribution is the correct answer"
+   },
+   {
+    "case": "score",
+    "variant": "1-two-levels",
+    "q": "satisfaction",
+    "type": "score",
+    "correct": true,
+    "p": 1.0,
+    "pred": "1.00",
+    "check": ">=0.7",
+    "expected": 0.7,
+    "request_ms": 341.3873890240211,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "score",
+     "score": 1.0,
+     "confidence": 1.0,
+     "legend": {
+      "0": "Dissatisfied",
+      "1": "Satisfied"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 1.0
+     }
+    },
+    "note": ""
+   },
+   {
+    "case": "score",
+    "variant": "2-three-low",
+    "q": "anger",
+    "type": "score",
+    "correct": true,
+    "p": 0.0,
+    "pred": "1.00",
+    "check": "in [1.0,1.6]",
+    "expected": [
+     1.0,
+     1.6
+    ],
+    "request_ms": 326.858804008225,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "score",
+     "score": 0.0,
+     "confidence": 1.0,
+     "legend": {
+      "0": "Calm and satisfied",
+      "1": "Mildly annoyed",
+      "2": "Angry"
+     },
+     "probabilities": {
+      "0": 1.0,
+      "1": 0.0,
+      "2": 0.0
+     }
+    },
+    "note": ""
+   },
+   {
+    "case": "score",
+    "variant": "3-three-high",
+    "q": "anger",
+    "type": "score",
+    "correct": true,
+    "p": 1.0,
+    "pred": "3.00",
+    "check": ">=2.5",
+    "expected": 2.5,
+    "request_ms": 330.4316549911164,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "score",
+     "score": 2.0,
+     "confidence": 1.0,
+     "legend": {
+      "0": "Calm and satisfied",
+      "1": "Mildly annoyed",
+      "2": "Angry"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.0,
+      "2": 1.0
+     }
+    },
+    "note": ""
+   },
+   {
+    "case": "score",
+    "variant": "4-urgency5-low",
+    "q": "urgency",
+    "type": "score",
+    "correct": true,
+    "p": 0.99,
+    "pred": "2.33",
+    "check": "in [1.0,2.6]",
+    "expected": [
+     1.0,
+     2.6
+    ],
+    "request_ms": 308.54920600540936,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "score",
+     "score": 1.33,
+     "confidence": 0.7,
+     "legend": {
+      "0": "Very low: no action needed",
+      "1": "Low: can wait a week or more",
+      "2": "Medium: should be handled within a few days",
+      "3": "High: blocks important work, handle today",
+      "4": "Critical: outage, data loss or security risk, handle immediately"
+     },
+     "probabilities": {
+      "0": 0.01,
+      "1": 0.65,
+      "2": 0.34,
+      "3": 0.0,
+      "4": 0.0
+     }
+    },
+    "note": ""
+   },
+   {
+    "case": "score",
+    "variant": "5-urgency5-high",
+    "q": "urgency",
+    "type": "score",
+    "correct": true,
+    "p": 1.0,
+    "pred": "5.00",
+    "check": ">=4.3",
+    "expected": 4.3,
+    "request_ms": 352.0774159987923,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "score",
+     "score": 4.0,
+     "confidence": 1.0,
+     "legend": {
+      "0": "Very low: no action needed",
+      "1": "Low: can wait a week or more",
+      "2": "Medium: should be handled within a few days",
+      "3": "High: blocks important work, handle today",
+      "4": "Critical: outage, data loss or security risk, handle immediately"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.0,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 1.0
+     }
+    },
+    "note": ""
+   },
+   {
+    "case": "score",
+    "variant": "6-ten-levels",
+    "q": "severity",
+    "type": "score",
+    "correct": true,
+    "p": 1.0,
+    "pred": "1.30",
+    "check": "in [0.0,3.0]",
+    "expected": [
+     0.0,
+     3.0
+    ],
+    "request_ms": 373.69490700075403,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "score",
+     "score": 1.3,
+     "confidence": 0.82,
+     "legend": {
+      "0": "Severity 0 of 9, where 0 is harmless and 9 is catastrophic",
+      "1": "Severity 1 of 9, where 0 is harmless and 9 is catastrophic",
+      "2": "Severity 2 of 9, where 0 is harmless and 9 is catastrophic",
+      "3": "Severity 3 of 9, where 0 is harmless and 9 is catastrophic",
+      "4": "Severity 4 of 9, where 0 is harmless and 9 is catastrophic",
+      "5": "Severity 5 of 9, where 0 is harmless and 9 is catastrophic",
+      "6": "Severity 6 of 9, where 0 is harmless and 9 is catastrophic",
+      "7": "Severity 7 of 9, where 0 is harmless and 9 is catastrophic",
+      "8": "Severity 8 of 9, where 0 is harmless and 9 is catastrophic",
+      "9": "Severity 9 of 9, where 0 is harmless and 9 is catastrophic"
+     },
+     "probabilities": {
+      "0": 0.07,
+      "1": 0.59,
+      "2": 0.31,
+      "3": 0.03,
+      "4": 0.0,
+      "5": 0.0,
+      "6": 0.0,
+      "7": 0.0,
+      "8": 0.0,
+      "9": 0.0
+     }
+    },
+    "note": "10 levels, the documented Jev maximum"
+   },
+   {
+    "case": "score",
+    "variant": "7-ten-levels-high",
+    "q": "severity",
+    "type": "score",
+    "correct": true,
+    "p": 0.95,
+    "pred": "7.98",
+    "check": ">=7.0",
+    "expected": 7.0,
+    "request_ms": 351.9752639986109,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "score",
+     "score": 7.98,
+     "confidence": 0.78,
+     "legend": {
+      "0": "Severity 0 of 9, where 0 is harmless and 9 is catastrophic",
+      "1": "Severity 1 of 9, where 0 is harmless and 9 is catastrophic",
+      "2": "Severity 2 of 9, where 0 is harmless and 9 is catastrophic",
+      "3": "Severity 3 of 9, where 0 is harmless and 9 is catastrophic",
+      "4": "Severity 4 of 9, where 0 is harmless and 9 is catastrophic",
+      "5": "Severity 5 of 9, where 0 is harmless and 9 is catastrophic",
+      "6": "Severity 6 of 9, where 0 is harmless and 9 is catastrophic",
+      "7": "Severity 7 of 9, where 0 is harmless and 9 is catastrophic",
+      "8": "Severity 8 of 9, where 0 is harmless and 9 is catastrophic",
+      "9": "Severity 9 of 9, where 0 is harmless and 9 is catastrophic"
+     },
+     "probabilities": {
+      "0": 0.01,
+      "1": 0.0,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0,
+      "5": 0.01,
+      "6": 0.03,
+      "7": 0.11,
+      "8": 0.58,
+      "9": 0.26
+     }
+    },
+    "note": ""
+   },
+   {
+    "case": "score",
+    "variant": "8-midpoint",
+    "q": "anger",
+    "type": "score",
+    "correct": true,
+    "p": 0.0,
+    "pred": "1.91",
+    "check": "in [1.2,2.2]",
+    "expected": [
+     1.2,
+     2.2
+    ],
+    "request_ms": 342.9805340128951,
+    "questions_in_request": 1,
+    "answer": {
+     "type": "score",
+     "score": 0.91,
+     "confidence": 0.87,
+     "legend": {
+      "0": "Calm and satisfied",
+      "1": "Mildly annoyed",
+      "2": "Angry"
+     },
+     "probabilities": {
+      "0": 0.09,
+      "1": 0.91,
+      "2": 0.0
+     }
+    },
+    "note": "should land between levels, which is what score is for"
+   },
+   {
+    "case": "mixed",
+    "variant": "fanout",
+    "q": "is_bug",
+    "type": "noul",
+    "correct": true,
+    "p": 0.95,
+    "pred": "yes",
+    "check": "exact",
+    "expected": "yes",
+    "request_ms": 334.86643800279126,
+    "questions_in_request": 4,
+    "answer": {
+     "type": "noul",
+     "noul": 0.95
+    },
+    "note": ""
+   },
+   {
+    "case": "mixed",
+    "variant": "fanout",
+    "q": "threat",
+    "type": "noul",
+    "correct": true,
+    "p": 0.9299999999999999,
+    "pred": "no",
+    "check": "exact",
+    "expected": "no",
+    "request_ms": 334.86643800279126,
+    "questions_in_request": 4,
+    "answer": {
+     "type": "noul",
+     "noul": 0.07
+    },
+    "note": "'escalate internally' is not a cancellation threat"
+   },
+   {
+    "case": "mixed",
+    "variant": "fanout",
+    "q": "routing",
+    "type": "choice",
+    "correct": true,
+    "p": 1.0,
+    "pred": "technical",
+    "check": "exact",
+    "expected": "technical",
+    "request_ms": 334.86643800279126,
+    "questions_in_request": 4,
+    "answer": {
+     "type": "choice",
+     "choice": "technical",
+     "confidence": 1.0,
+     "probabilities": {
+      "billing": 0.0,
+      "sales": 0.0,
+      "general": 0.0,
+      "technical": 1.0
+     }
+    },
+    "note": ""
+   },
+   {
+    "case": "mixed",
+    "variant": "fanout",
+    "q": "urgency",
+    "type": "score",
+    "correct": true,
+    "p": 1.0,
+    "pred": "4.26",
+    "check": ">=3.5",
+    "expected": 3.5,
+    "request_ms": 334.86643800279126,
+    "questions_in_request": 4,
+    "answer": {
+     "type": "score",
+     "score": 3.26,
+     "confidence": 0.78,
+     "legend": {
+      "0": "Very low: no action needed",
+      "1": "Low: can wait a week or more",
+      "2": "Medium: should be handled within a few days",
+      "3": "High: blocks important work, handle today",
+      "4": "Critical: outage, data loss or security risk, handle immediately"
+     },
+     "probabilities": {
+      "0": 0.0,
+      "1": 0.0,
+      "2": 0.0,
+      "3": 0.74,
+      "4": 0.26
+     }
+    },
+    "note": ""
+   }
+  ],
+  "latencies": [
+   330.6333910149988,
+   329.6230940031819,
+   383.7901859951671,
+   327.1790989965666,
+   344.94439099216834,
+   338.1321140041109,
+   319.4899990048725,
+   355.8071500156075,
+   321.4455630222801,
+   345.95036902464926,
+   465.85532499011606,
+   337.93197898194194,
+   327.9646640003193,
+   351.2158940138761,
+   345.42589698685333,
+   384.120204980718,
+   308.44875899492763,
+   358.02634499850683,
+   308.6334550171159,
+   349.8754309839569,
+   314.17267498909496,
+   341.52554799220525,
+   363.9085670001805,
+   392.3068919975776,
+   360.1519250078127,
+   320.5869750236161,
+   319.00754099478945,
+   315.24330598767847,
+   336.6912140045315,
+   405.3600199986249,
+   341.3873890240211,
+   326.858804008225,
+   330.4316549911164,
+   308.54920600540936,
+   352.0774159987923,
+   373.69490700075403,
+   351.9752639986109,
+   342.9805340128951,
+   334.86643800279126
+  ],
+  "failures": 0,
+  "server_timing": null
+ }
+]

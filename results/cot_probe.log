@@ -1,0 +1,16 @@
+5 chains at temperature 0.8, model gemma4-e4b
+
+case                      want              single             cot-1        cot-5 mean    cot-5 vote
+----------------------------------------------------------------------------------------------------
+refund, no thread         Yes            yes 0.958         yes 1.000         yes 1.000          1.00
+refund, 1500t thread      Yes            NO  0.018         yes 0.998         yes 0.999          1.00
+refund, 3000t thread      Yes            NO  0.269         yes 1.000         yes 1.000          1.00
+date math in isolation    Yes            NO  0.000         yes 1.000         yes 1.000          1.00
+billing already resolved  No             NO  0.182         NO  0.000         NO  0.000          0.00
+----------------------------------------------------------------------------------------------------
+ACCURACY                                       2/5               5/5               5/5           5/5
+median ms per answer                        941 ms           3083 ms          15417 ms
+
+upstream calls: 55   generated tokens: 2499 (single-pass generates 0)
+distinct values a 5-chain vote can take: 6 (0/5, 1/5, 2/5, 3/5, 4/5, 5/5)  -- the mean is continuous
+-> /home/gladius/Workspace/jevbox/results/cot_probe.json

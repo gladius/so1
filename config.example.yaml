@@ -1,0 +1,42 @@
+# Public model name -> upstream vLLM endpoint.
+default_model: gemma4-e4b
+
+aliases:
+  jev-latest: gemma4-e4b
+  jev-preview: gemma4-e4b
+
+models:
+  gemma4-e4b:
+    url: ${E4B_URL:-https://fcy67kixeo37lf.api.runpod.ai}
+    upstream_model: gemma4-e4b
+    release_date: "2026-09-21"
+    description: Gemma 4 E4B served by vLLM on RunPod.
+  gemma4-26b-a4b:
+    url: ${B26_URL:-https://jg2qfy9mbdrw0h.api.runpod.ai}
+    upstream_model: gemma4-26b-a4b
+    release_date: "2026-09-21"
+    description: Gemma 4 26B-A4B served by vLLM on RunPod.
+    enabled: false            # endpoint is down; re-enable when it is back up
+
+upstream_api_key: ${RUNPOD_API_KEY}
+
+# Optional bearer auth on OUR api, separate from the upstream key. Unset = open.
+api_key: ${SO1_API_KEY}
+
+# Calibration, per question type. 1.0 = raw model probabilities.
+# Fit with scripts/fit_temperature.py once you have labelled eval runs.
+temperature:
+  noul: 1.0
+  choice: 1.0
+  score: 1.0
+
+limits:
+  max_questions: 64
+  max_choice_options: 64      # exact readout ceiling; fallback is capped to the upstream max_logprobs
+  max_score_levels: 10        # what the real Jev documents
+  max_body_bytes: 2097152     # 2 MiB
+  max_prompt_tokens: 32768    # clamped down to the upstream's max_model_len at startup
+  max_concurrent_requests: 16
+  max_upstream_concurrency: 64
+  request_timeout_s: 120.0
+  upstream_timeout_s: 90.0

@@ -1,0 +1,15 @@
+boolq: 300 items from google/boolq [validation] (noul), concurrency 6
+
+  so1: done
+  jev-1.13.0: done
+
+metric                                     so1        jev-1.13.0
+----------------------------------------------------------------
+accuracy                       248/300 (82.7%)   283/300 (94.3%)
+95% CI                            [78.0, 86.5]      [91.1, 96.4]
+ECE (lower better)                       0.151             0.039
+Brier (lower better)                     0.159             0.051
+
+McNemar: so1 only 0, jev-1.13.0 only 35, p = 0.0000  -> SIGNIFICANT
+-> /home/gladius/Workspace/jevbox/results/public_boolq.json
+EXIT=0

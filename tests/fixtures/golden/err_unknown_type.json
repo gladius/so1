@@ -1,0 +1,21 @@
+{
+  "source": "https://api.typesafe.ai",
+  "direct": true,
+  "request": {
+    "model": "jev-latest",
+    "state": "x",
+    "questions": {
+      "q": {
+        "type": "bogus",
+        "instructions": "y"
+      }
+    }
+  },
+  "status": 400,
+  "response": {
+    "detail": {
+      "error_type": "api_usage_error",
+      "message": "Invalid request."
+    }
+  }
+}

@@ -1,0 +1,17 @@
+sst5: 250 items from SetFit/sst5 [test] (score), concurrency 6
+
+  so1: done
+  jev-1.13.0: done
+
+metric                                     so1        jev-1.13.0
+----------------------------------------------------------------
+accuracy                       140/250 (56.0%)   151/250 (60.4%)
+95% CI                            [49.8, 62.0]      [54.2, 66.3]
+ECE (lower better)                       0.364             0.187
+Brier (lower better)                     0.363             0.265
+mean |score - gold|                      0.522             0.448
+within 1 level                           85.6%             92.4%
+
+McNemar: so1 only 24, jev-1.13.0 only 35, p = 0.1925  -> not significant
+-> /home/gladius/Workspace/jevbox/results/public_sst5.json
+EXIT=0

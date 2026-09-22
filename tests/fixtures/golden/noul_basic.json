@@ -1,0 +1,28 @@
+{
+  "source": "https://api.typesafe.ai",
+  "direct": true,
+  "request": {
+    "model": "jev-latest",
+    "state": "Help! My payouts have been failing for 3 days and nobody has replied.",
+    "questions": {
+      "is_urgent": {
+        "type": "noul",
+        "instructions": "Does this convey urgency?"
+      }
+    }
+  },
+  "status": 200,
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "is_urgent": {
+        "type": "noul",
+        "noul": 0.96
+      }
+    },
+    "usage": {
+      "input_tokens": 287,
+      "output_tokens": 23
+    }
+  }
+}

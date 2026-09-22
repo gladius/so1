@@ -1,0 +1,39 @@
+{
+  "source": "https://api.typesafe.ai",
+  "direct": true,
+  "request": {
+    "model": "jev-latest",
+    "state": "Help! My payouts have been failing for 3 days and nobody has replied.",
+    "questions": {
+      "tone": {
+        "type": "choice",
+        "instructions": "What is the customer's tone?",
+        "criteria": {
+          "calm": null,
+          "frustrated": null,
+          "angry": null
+        }
+      }
+    }
+  },
+  "status": 200,
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "tone": {
+        "type": "choice",
+        "choice": "frustrated",
+        "confidence": 0.96,
+        "probabilities": {
+          "angry": 0.02,
+          "frustrated": 0.98,
+          "calm": 0.0
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 315,
+      "output_tokens": 44
+    }
+  }
+}

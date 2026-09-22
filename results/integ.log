@@ -1,0 +1,15 @@
+
+  probe: fallback readout, chat strategy, 64 labels, max_model_len=8192, max_logprobs=64
+..
+  {'is_bug': {'type': 'noul', 'noul': 0.9999251537389531}, 'team': {'type': 'choice', 'choice': 'technical', 'confidence': 0.9999994968031802, 'probabilities': {'billing': 9.833214197635931e-09, 'technical': 0.9999996645354534, 'sales': 3.2563133236134383e-07}}, 'urgency': {'type': 'score', 'score': 1.8519521366251328, 'confidence': 0.7779282049376993, 'legend': {'0': 'can wait', '1': 'this week', '2': 'today'}, 'probabilities': {'0': 3.5621732590604037e-07, '1': 0.14804715094021534, '2': 0.8519524928424588}}}
+  usage={'input_tokens': 189, 'output_tokens': 3} timing=prepare;dur=0.0, warmup;dur=355.3, branches;dur=518.6
+.
+  1 question: {'input_tokens': 424, 'output_tokens': 1}   4 questions: {'input_tokens': 476, 'output_tokens': 4}
+..
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/starlette/testclient.py:53
+  /home/gladius/Workspace/jevbox/localjev/.venv/lib/python3.12/site-packages/starlette/testclient.py:53: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+5 passed, 1 warning in 18.23s

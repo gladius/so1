@@ -1,0 +1,46 @@
+[project]
+name = "so1"
+version = "0.1.0"
+description = "Jev-compatible System One service on our own vLLM endpoints"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.32",
+    "httpx>=0.27",
+    "pydantic>=2.9",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3",
+    "pytest-asyncio>=0.24",
+    "ruff>=0.7",
+    "typesafe-sdk>=0.7",
+]
+
+[project.scripts]
+so1 = "so1.__main__:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/so1"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+markers = [
+    "upstream: hits the real RunPod vLLM endpoint (needs RUNPOD_API_KEY)",
+    "jev: hits the real Jev API (needs TYPESAFE_API_KEY or OPENROUTER_API_KEY)",
+    "sdk: runs the official typesafe-sdk against a live local service",
+]
+
+[tool.ruff]
+line-length = 120
+src = ["src", "tests", "scripts"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]

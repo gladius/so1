@@ -1,0 +1,32 @@
+{
+  "source": "https://api.typesafe.ai",
+  "direct": true,
+  "request": {
+    "model": "jev-latest",
+    "state": "Buy cheap watches now!!! Limited offer, click here.",
+    "questions": {
+      "is_spam": {
+        "type": "noul",
+        "instructions": "Is this message spam?",
+        "criteria": {
+          "true": "Unsolicited advertising",
+          "false": "A legitimate conversation"
+        }
+      }
+    }
+  },
+  "status": 200,
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "is_spam": {
+        "type": "noul",
+        "noul": 0.94
+      }
+    },
+    "usage": {
+      "input_tokens": 306,
+      "output_tokens": 22
+    }
+  }
+}

@@ -1,0 +1,35 @@
+# Secrets and machine-local config. config.example.yaml is the tracked template.
+.env
+.env.*
+!.env.example
+config.yaml
+
+# Virtualenvs and build output
+.venv/
+venv/
+env/
+build/
+dist/
+*.egg-info/
+__pycache__/
+*.py[cod]
+
+# Tool caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Editor / OS noise
+.idea/
+.vscode/
+*.swp
+.DS_Store
+
+# Benchmark and eval output written outside results/. Everything under results/ IS
+# tracked on purpose - it is the evidence behind the numbers in the README.
+/*.csv
+/*.jsonl
+/*.log
+/eval_run.json

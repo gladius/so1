@@ -1,0 +1,71 @@
+{
+  "source": "https://api.typesafe.ai",
+  "direct": true,
+  "request": {
+    "model": "jev-latest",
+    "state": "Help! My payouts have been failing for 3 days and nobody has replied.",
+    "questions": {
+      "billing": {
+        "type": "noul",
+        "instructions": "Is this ticket about billing?"
+      },
+      "tone": {
+        "type": "choice",
+        "instructions": "What is the customer's tone?",
+        "criteria": {
+          "calm": null,
+          "frustrated": null,
+          "angry": null
+        }
+      },
+      "urgency": {
+        "type": "score",
+        "instructions": "How urgent is this ticket?",
+        "criteria": [
+          "can wait",
+          "this week",
+          "today"
+        ]
+      }
+    }
+  },
+  "status": 200,
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "billing": {
+        "type": "noul",
+        "noul": 0.8
+      },
+      "tone": {
+        "type": "choice",
+        "choice": "frustrated",
+        "confidence": 0.96,
+        "probabilities": {
+          "angry": 0.02,
+          "calm": 0.0,
+          "frustrated": 0.98
+        }
+      },
+      "urgency": {
+        "type": "score",
+        "score": 1.99,
+        "confidence": 0.99,
+        "legend": {
+          "0": "can wait",
+          "1": "this week",
+          "2": "today"
+        },
+        "probabilities": {
+          "0": 0.0,
+          "1": 0.01,
+          "2": 0.99
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 367,
+      "output_tokens": 75
+    }
+  }
+}

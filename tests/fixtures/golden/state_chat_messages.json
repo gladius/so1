@@ -1,0 +1,37 @@
+{
+  "source": "https://api.typesafe.ai",
+  "direct": true,
+  "request": {
+    "model": "jev-latest",
+    "state": [
+      {
+        "role": "user",
+        "content": "where is my refund"
+      },
+      {
+        "role": "assistant",
+        "content": "checking now"
+      }
+    ],
+    "questions": {
+      "refund": {
+        "type": "noul",
+        "instructions": "Is the user asking about a refund?"
+      }
+    }
+  },
+  "status": 200,
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "refund": {
+        "type": "noul",
+        "noul": 0.99
+      }
+    },
+    "usage": {
+      "input_tokens": 313,
+      "output_tokens": 20
+    }
+  }
+}

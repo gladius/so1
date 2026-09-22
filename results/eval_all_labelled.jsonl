@@ -1,0 +1,33 @@
+{"type": "choice", "probabilities": {"billing": 0.9999995037976496, "technical": 2.536019260635494e-07, "sales": 4.363462167749859e-09, "general": 2.3823696209875558e-07}, "correct": "billing"}
+{"type": "choice", "probabilities": {"billing": 0.9999904452118921, "technical": 1.6536767164210541e-06, "sales": 1.1861008229432207e-08, "general": 7.889250383277153e-06}, "correct": "billing"}
+{"type": "choice", "probabilities": {"general": 2.53442622943536e-07, "sales": 1.9934806454375955e-06, "technical": 0.0006263327015980131, "billing": 0.9993714203751336}, "correct": "billing"}
+{"type": "choice", "probabilities": {"billing": 0.9997453825718252, "technical": 7.483280432387452e-05, "sales": 2.698892334391644e-07, "general": 0.0001795147346174437}, "correct": "billing"}
+{"type": "choice", "probabilities": {"billing": 0.9995372006353522, "technical": 3.1188436823527254e-05, "sales": 1.0672096211833771e-06, "general": 0.0004305437182031132}, "correct": "billing"}
+{"type": "choice", "probabilities": {"billing": 2.7264023573634896e-06, "technical": 0.9999723650953491, "sales": 6.08342594627572e-07, "general": 2.430015969889231e-05}, "correct": "technical"}
+{"type": "noul", "probabilities": {"Yes": 0.00013982363188685007, "No": 0.9998601763681132}, "correct": "No"}
+{"type": "noul", "probabilities": {"Yes": 3.7267144263701215e-06, "No": 0.9999962732855736}, "correct": "No"}
+{"type": "noul", "probabilities": {"Yes": 0.00043055637437827097, "No": 0.9995694436256217}, "correct": "Yes"}
+{"type": "noul", "probabilities": {"Yes": 3.089494047031251e-06, "No": 0.999996910505953}, "correct": "No"}
+{"type": "noul", "probabilities": {"Yes": 3.966980451061815e-06, "No": 0.999996033019549}, "correct": "No"}
+{"type": "noul", "probabilities": {"Yes": 0.9999706884687359, "No": 2.9311531264064605e-05}, "correct": "Yes"}
+{"type": "choice", "probabilities": {"billing": 0.0002302929816980488, "technical": 0.9988426385811177, "sales": 0.0001232669503615953, "general": 0.0008038014868226735}, "correct": "technical"}
+{"type": "choice", "probabilities": {"general": 3.5007265640611147e-06, "sales": 2.4299858728395997e-05, "technical": 0.9999599806783986, "billing": 1.2218736308870302e-05}, "correct": "technical"}
+{"type": "noul", "probabilities": {"Yes": 0.9999975938989201, "No": 2.4061010799325544e-06}, "correct": "Yes"}
+{"type": "noul", "probabilities": {"Yes": 0.9999982396570551, "No": 1.7603429448564967e-06}, "correct": "Yes"}
+{"type": "noul", "probabilities": {"Yes": 0.9999861539888844, "No": 1.3846011115647983e-05}, "correct": "Yes"}
+{"type": "noul", "probabilities": {"Yes": 3.6370662747892627e-12, "No": 0.9999999999963629}, "correct": "No"}
+{"type": "noul", "probabilities": {"Yes": 0.00010889667542428823, "No": 0.9998911033245758}, "correct": "No"}
+{"type": "noul", "probabilities": {"Yes": 1.0815940946172752e-11, "No": 0.9999999999891841}, "correct": "No"}
+{"type": "noul", "probabilities": {"Yes": 0.9999898700127914, "No": 1.0129987208618019e-05}, "correct": "Yes"}
+{"type": "noul", "probabilities": {"Yes": 0.9992903295780172, "No": 0.0007096704219827776}, "correct": "Yes"}
+{"type": "noul", "probabilities": {"Yes": 1.147876332914211e-05, "No": 0.9999885212366708}, "correct": "No"}
+{"type": "choice", "probabilities": {"billing": 0.9999975938965137, "technical": 2.406103486313514e-06}, "correct": "billing"}
+{"type": "choice", "probabilities": {"billing": 7.349269460209012e-10, "technical": 0.9999999851802341, "sales": 3.61743721014511e-09, "general": 1.04674016395719e-08}, "correct": "technical"}
+{"type": "choice", "probabilities": {"billing": 3.0887444009226373e-06, "technical": 0.9997536915084724, "sales": 8.479738165290812e-05, "general": 0.0001584223654738829}, "correct": "technical"}
+{"type": "choice", "probabilities": {"billing": 0.047113910952801846, "technical": 0.0016121489920719392, "sales": 0.94630817156678, "general": 0.004965768488346209}, "correct": "sales"}
+{"type": "choice", "probabilities": {"billing": 1.2116896443519635e-09, "technical": 3.432128740920132e-08, "sales": 1.5079721267679672e-09, "general": 6.485707299574993e-10, "security": 0.999999949099298, "legal": 1.262609603238144e-08, "partnerships": 3.0334056700130836e-11, "careers": 5.547519432975111e-10}, "correct": "security"}
+{"type": "choice", "probabilities": {"billing": 1.2995651645559002e-11, "technical": 4.840077295416247e-08, "sales": 1.267172926103016e-10, "general": 4.122566377998594e-10, "security": 5.801540407037172e-11, "legal": 6.729904610018395e-11, "partnerships": 0.0, "careers": 3.477816727370166e-11, "accessibility": 0.9999999483022511, "localisation": 1.7087562790976905e-09, "data_export": 1.2871279960722244e-10, "mobile": 3.2241956609446245e-10, "api": 2.5004629049566084e-10, "billing_disputes": 3.154242807954724e-11, "training": 6.835885186633157e-11, "status": 7.507751121329587e-11}, "correct": "accessibility"}
+{"type": "choice", "probabilities": {"general": 1.0102783343065893e-10, "sales": 1.4307241081154838e-08, "technical": 0.9999999415223261, "billing": 4.406940503970537e-08}, "correct": "technical"}
+{"type": "noul", "probabilities": {"Yes": 0.999738809696633, "No": 0.0002611903033670204}, "correct": "Yes"}
+{"type": "noul", "probabilities": {"Yes": 7.484616057195101e-05, "No": 0.999925153839428}, "correct": "No"}
+{"type": "choice", "probabilities": {"billing": 1.0364131173309795e-09, "technical": 0.9999997508934089, "sales": 9.833213874573189e-09, "general": 2.3823696420318377e-07}, "correct": "technical"}

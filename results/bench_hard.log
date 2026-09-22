@@ -1,0 +1,85 @@
+  so1          state=500   q=1   run=0     448 ms  1/1
+  so1          state=500   q=1   run=1     474 ms  1/1
+  jev-1.13.0   state=500   q=1   run=0     362 ms  1/1
+  jev-1.13.0   state=500   q=1   run=1     386 ms  1/1
+  so1          state=500   q=2   run=0    1086 ms  2/2
+  so1          state=500   q=2   run=1     982 ms  2/2
+  jev-1.13.0   state=500   q=2   run=0     321 ms  2/2
+  jev-1.13.0   state=500   q=2   run=1     326 ms  2/2
+  so1          state=500   q=4   run=0    1086 ms  4/4
+  so1          state=500   q=4   run=1    1066 ms  4/4
+  jev-1.13.0   state=500   q=4   run=0     360 ms  4/4
+  jev-1.13.0   state=500   q=4   run=1     442 ms  4/4
+  so1          state=500   q=8   run=0    1072 ms  8/8
+  so1          state=500   q=8   run=1    1009 ms  8/8
+  jev-1.13.0   state=500   q=8   run=0     339 ms  7/8
+  jev-1.13.0   state=500   q=8   run=1     356 ms  7/8
+  so1          state=1500  q=1   run=0     614 ms  0/1
+  so1          state=1500  q=1   run=1     503 ms  0/1
+  jev-1.13.0   state=1500  q=1   run=0     329 ms  1/1
+  jev-1.13.0   state=1500  q=1   run=1     331 ms  1/1
+  so1          state=1500  q=2   run=0     997 ms  1/2
+  so1          state=1500  q=2   run=1    1172 ms  1/2
+  jev-1.13.0   state=1500  q=2   run=0     336 ms  2/2
+  jev-1.13.0   state=1500  q=2   run=1     366 ms  2/2
+  so1          state=1500  q=4   run=0    1142 ms  2/4
+  so1          state=1500  q=4   run=1    1036 ms  2/4
+  jev-1.13.0   state=1500  q=4   run=0     356 ms  4/4
+  jev-1.13.0   state=1500  q=4   run=1     347 ms  4/4
+  so1          state=1500  q=8   run=0    1175 ms  4/8
+  so1          state=1500  q=8   run=1    1129 ms  4/8
+  jev-1.13.0   state=1500  q=8   run=0     329 ms  6/8
+  jev-1.13.0   state=1500  q=8   run=1     339 ms  6/8
+  so1          state=3000  q=1   run=0     931 ms  0/1
+  so1          state=3000  q=1   run=1     610 ms  0/1
+  jev-1.13.0   state=3000  q=1   run=0     339 ms  1/1
+  jev-1.13.0   state=3000  q=1   run=1     372 ms  1/1
+  so1          state=3000  q=2   run=0    1235 ms  1/2
+  so1          state=3000  q=2   run=1    1125 ms  1/2
+  jev-1.13.0   state=3000  q=2   run=0     324 ms  2/2
+  jev-1.13.0   state=3000  q=2   run=1     346 ms  2/2
+  so1          state=3000  q=4   run=0    1306 ms  3/4
+  so1          state=3000  q=4   run=1    1225 ms  3/4
+  jev-1.13.0   state=3000  q=4   run=0     368 ms  4/4
+  jev-1.13.0   state=3000  q=4   run=1     337 ms  4/4
+  so1          state=3000  q=8   run=0    1488 ms  4/8
+  so1          state=3000  q=8   run=1    1345 ms  4/8
+  jev-1.13.0   state=3000  q=8   run=0     678 ms  6/8
+  jev-1.13.0   state=3000  q=8   run=1     383 ms  6/8
+  so1          state=6500  q=1   run=0    2466 ms  0/1
+  so1          state=6500  q=1   run=1    1587 ms  0/1
+  jev-1.13.0   state=6500  q=1   run=0     778 ms  1/1
+  jev-1.13.0   state=6500  q=1   run=1     415 ms  1/1
+  so1          state=6500  q=2   run=0    2310 ms  1/2
+  so1          state=6500  q=2   run=1    2162 ms  1/2
+  jev-1.13.0   state=6500  q=2   run=0     613 ms  2/2
+  jev-1.13.0   state=6500  q=2   run=1     366 ms  2/2
+  so1          state=6500  q=4   run=0    2438 ms  2/4
+  so1          state=6500  q=4   run=1    2284 ms  2/4
+  jev-1.13.0   state=6500  q=4   run=0     733 ms  4/4
+  jev-1.13.0   state=6500  q=4   run=1     347 ms  4/4
+  so1          state=6500  q=8   run=0    3002 ms  3/8
+  so1          state=6500  q=8   run=1    2691 ms  3/8
+  jev-1.13.0   state=6500  q=8   run=0    1213 ms  6/8
+  jev-1.13.0   state=6500  q=8   run=1     419 ms  6/8
+
+  state   q                       so1                jev-1.13.0
+---------------------------------------------------------------
+    500   1              461 ms  100%              374 ms  100%
+    500   2             1034 ms  100%              323 ms  100%
+    500   4             1076 ms  100%              401 ms  100%
+    500   8             1041 ms  100%              347 ms   88%
+   1500   1              558 ms    0%              330 ms  100%
+   1500   2             1084 ms   50%              351 ms  100%
+   1500   4             1089 ms   50%              351 ms  100%
+   1500   8             1152 ms   50%              334 ms   75%
+   3000   1              771 ms    0%              356 ms  100%
+   3000   2             1180 ms   50%              335 ms  100%
+   3000   4             1265 ms   75%              353 ms  100%
+   3000   8             1417 ms   50%              530 ms   75%
+   6500   1             2026 ms    0%              596 ms  100%
+   6500   2             2236 ms   50%              490 ms  100%
+   6500   4             2361 ms   50%              540 ms  100%
+   6500   8             2846 ms   38%              816 ms   75%
+
+64 rows -> bench_scaling_hard.csv
